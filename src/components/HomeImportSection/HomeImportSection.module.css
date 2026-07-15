@@ -1,0 +1,35 @@
+.section {
+  padding: 48px 16px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+}
+.inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  color: #fff;
+  text-align: center;
+}
+.title {
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+.copy {
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+.actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+.button {
+  background: #1f6feb;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+.link {
+  color: #cbd5e1;
+  align-self: center;
+  text-decoration: none;
+}

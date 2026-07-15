@@ -1,0 +1,555 @@
+/* Container Basics */
+.container {
+  width: 100%;
+  background-color: #f8fafc;
+  min-height: 100vh;
+  color: #334155;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.wrapper {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Hero Layout Styles */
+.heroSection {
+  position: relative;
+  width: 100%;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  background-color: #0f172a;
+  overflow: hidden;
+  padding: 6rem 0;
+}
+
+.heroBackground {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.heroImgSrc {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.25;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, #0f172a 40%, rgba(15, 23, 42, 0.6), transparent);
+}
+
+.heroContent {
+  position: relative;
+  max-width: 44rem;
+  z-index: 10;
+}
+
+.heroBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  color: #f8fafc;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.heroTitle {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .heroTitle { font-size: 4rem; }
+}
+
+.heroBody {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #cbd5e1;
+  font-weight: 300;
+  margin-bottom: 2.5rem;
+}
+
+.heroCtas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.heroBtnPrimary {
+  background-color: #059669;
+  color: #ffffff;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.heroBtnPrimary:hover { background-color: #047857; }
+
+.heroBtnSecondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.heroBtnSecondary:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: #ffffff;
+}
+
+/* Metrics Section Styles */
+.metricsSection {
+  background-color: #ffffff;
+  padding: 4rem 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+@media (min-width: 768px) {
+  .metricsGrid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.metricItem {
+  text-align: center;
+}
+
+.metricVal {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #0f172a;
+  letter-spacing: -0.04em;
+  display: block;
+}
+
+.metricLabel {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #334155;
+  margin: 0.5rem 0 0.25rem 0;
+}
+
+.metricSub {
+  font-size: 0.875rem;
+  color: #64748b;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+/* Main Filtering Headers */
+.introSection {
+  padding-top: 5rem;
+  padding-bottom: 2rem;
+}
+
+.headerBlock {
+  max-width: 48rem;
+  margin-bottom: 3rem;
+}
+
+.overline {
+  color: #64748b;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.75rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.mainTitle {
+  font-size: 2.25rem;
+  font-weight: 900;
+  color: #0f172a;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+  margin: 0 0 1rem 0;
+}
+
+.leadParagraph {
+  color: #475569;
+  font-weight: 300;
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+/* Filter Controls Layout */
+.filterBar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 1rem;
+}
+
+.filterBtn {
+  background: transparent;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #64748b;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.filterBtn:hover {
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+
+.filterBtnActive {
+  background-color: #0f172a;
+  color: #ffffff !important;
+}
+
+/* Program List Alternating Framework */
+.gridSection {
+  padding-bottom: 6rem;
+}
+
+.pillarsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem; /* Expanded spacing to let transparent items breathe */
+}
+
+/* Clean Canvas Card Configuration (No background, No border, No box shadow) */
+.pillarCard {
+  background: transparent;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+}
+
+/* Alternating Zig-Zag Split Mapping */
+@media (min-width: 992px) {
+  .pillarCard {
+    align-items: center;
+    min-height: 420px;
+  }
+  
+  .imageLeft {
+    flex-direction: row;
+  }
+  
+  .imageRight {
+    flex-direction: row-reverse;
+  }
+}
+
+/* Image Container Box Panel */
+.imageFrame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background-color: #0f172a;
+  border-radius: 2rem; /* Soft curved geometry retained for visual assets */
+}
+
+@media (min-width: 992px) {
+  .imageFrame {
+    width: 45%;
+    aspect-ratio: 4 / 3;
+  }
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.9;
+  transition: transform 0.6s ease;
+}
+
+.pillarCard:hover .cardImage { transform: scale(1.03); }
+
+.cardScrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.1), transparent);
+}
+
+.badgeIcon {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-radius: 1.25rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+  display: flex;
+}
+
+/* Text Container Panel Box */
+.cardBody {
+  padding: 2rem 0; /* Padding moved inside boundaries since parent box has no background fill */
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+@media (min-width: 992px) {
+  .cardBody {
+    width: 55%;
+  }
+  .imageLeft .cardBody {
+    padding-left: 4rem;
+    padding-right: 0;
+  }
+  .imageRight .cardBody {
+    padding-right: 4rem;
+    padding-left: 0;
+  }
+}
+
+.cardBody > * + * { margin-top: 1.5rem; }
+
+.cardTitles {
+  margin: 0;
+}
+
+.cardSubtitle {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #94a3b8;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.cardMainTitle {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: 0;
+  transition: color 0.2s ease;
+}
+
+.cardDescription {
+  color: #475569;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.miniTracksGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.miniTrackBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.5rem 0.75rem;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #475569;
+  transition: all 0.2s ease;
+}
+
+/* Hover Accent Actions Matrix */
+.livelihoodTheme:hover .cardMainTitle { color: #d97706; }
+.mhpssTheme:hover .cardMainTitle { color: #e11d48; }
+.environmentTheme:hover .cardMainTitle { color: #059669; }
+.educationTheme:hover .cardMainTitle { color: #2563eb; }
+
+.livelihoodTheme:hover .miniTrackBadge { background-color: #fef3c7; color: #78350f; border-color: #fde68a; }
+.mhpssTheme:hover .miniTrackBadge { background-color: #ffe4e6; color: #881337; border-color: #fecdd3; }
+.environmentTheme:hover .miniTrackBadge { background-color: #d1fae5; color: #065f46; border-color: #a7f3d0; }
+.educationTheme:hover .miniTrackBadge { background-color: #dbeafe; color: #1e40af; border-color: #bfdbfe; }
+
+/* Elegant Minimal Action Links */
+.actionButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  align-self: flex-start; /* Keeps the action button fitted to content layout rather than stretching */
+  color: #0f172a;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+  background: transparent;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.arrow { transition: transform 0.2s ease; }
+.actionButton:hover .arrow { transform: translateX(4px); }
+
+.livelihoodTheme .actionButton:hover { color: #d97706; }
+.mhpssTheme .actionButton:hover { color: #e11d48; }
+.environmentTheme .actionButton:hover { color: #059669; }
+.educationTheme .actionButton:hover { color: #2563eb; }
+
+/* Pipeline Action Process Rows */
+.pipelineSection {
+  background-color: #ffffff;
+  padding: 6rem 0;
+  border-top: 1px solid #e2e8f0;
+}
+
+.centerHeader {
+  text-align: center;
+  max-width: 36rem;
+  margin: 0 auto 4rem auto;
+}
+
+.midTitle {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+}
+
+.pipelineGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .pipelineGrid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.pipeStep {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 2.5rem;
+  border-radius: 2rem;
+}
+
+.pipeNum {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #cbd5e1;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.pipeStep h4 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 0.5rem 0;
+}
+
+.pipeStep p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #64748b;
+  font-weight: 300;
+  margin: 0;
+}
+
+/* Institutional Alliance CTA Banner */
+.allianceSection {
+  padding: 4rem 0 6rem 0;
+}
+
+.allianceBanner {
+  background-color: #0f172a;
+  border-radius: 2.5rem;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .allianceBanner { flex-direction: row; padding: 4rem; }
+}
+
+.allianceLeft {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  color: #ffffff;
+}
+
+.allianceIcon {
+  color: #34d399;
+  flex-shrink: 0;
+}
+
+.allianceLeft h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 0 0 0.25rem 0;
+  letter-spacing: -0.01em;
+}
+
+.allianceLeft p {
+  color: #94a3b8;
+  font-weight: 300;
+  font-size: 0.95rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.allianceBtn {
+  background-color: #ffffff;
+  color: #0f172a;
+  font-weight: 700;
+  font-size: 0.875rem;
+  padding: 1.125rem 2.25rem;
+  border-radius: 1rem;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s ease;
+}
+
+.allianceBtn:hover { background-color: #f1f5f9; }

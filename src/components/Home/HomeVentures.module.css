@@ -1,0 +1,109 @@
+.sectionContainer {
+  position: relative;
+  width: 100%;
+  min-height: 520px;
+  padding: 6rem 2rem;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: #1a1f2e;
+}
+
+.backgroundImageLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* High-contrast playground structure inspired by Screenshot 2026-06-03 184637.jpg */
+  background-image: url('../../assets/bg1.jpg');
+  background-size: cover;
+  background-position: center 30%;
+  z-index: 1;
+  /* Dims the underlying bright yellow image by 50% for deep contrast */
+  filter: brightness(0.5) contrast(1.1);
+}
+
+.overlayLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Heavy dark theme gradient to guarantee text is perfectly readable */
+  background: linear-gradient(
+    90deg, 
+    rgba(15, 18, 29, 0.61) 0%,   /* Solid background behind text */
+    rgba(15, 18, 29, 0.88) 45%,  /* Transition zone */
+    rgba(15, 18, 29, 0.39) 100%  /* Muted exposure over the right side */
+  );
+  z-index: 2;
+}
+
+.contentWrapper {
+  position: relative;
+  max-width: 680px;
+  margin-left: 6%;
+  z-index: 3;
+  color: #afdbae;
+}
+
+
+.title {
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.description {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.82);
+  margin-bottom: 2.8rem;
+  font-weight: 400;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #22c55e;
+  color: #f1f8f3; /* Forest green accent text matching the original design spec */
+  padding: 1.1rem 2.2rem;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  border:#22c55e solid 2px;
+  letter-spacing: 0.08em;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.ctaButton:hover {
+  background-color: transparent;
+  color: #22c55e;
+  border-radius: 4px;
+
+}
+
+@media (max-width: 768px) {
+  .sectionContainer {
+    padding: 5rem 1.5rem;
+  }
+
+  .contentWrapper {
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  .overlayLayer {
+    background: linear-gradient(
+      180deg,
+      rgba(15, 18, 29, 0.98) 0%,
+      rgba(15, 18, 29, 0.9) 100%
+    );
+  }
+}

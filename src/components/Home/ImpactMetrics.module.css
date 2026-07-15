@@ -1,0 +1,148 @@
+.metricsSection {
+  position: relative;
+  width: 100%;
+  padding: 6rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  box-sizing: border-box;
+  background-color: #0f121d;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.backgroundLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../assets/Creating\ Community.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  filter: brightness(0.35) contrast(1.05);
+}
+
+.overlayLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 18, 29, 0.75);
+  z-index: 2;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  z-index: 3;
+  color: #ffffff;
+  text-align: center;
+}
+
+.headerArea {
+  margin-bottom: 3.5rem;
+}
+
+/* Animation utilities */
+.hidden {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.fadeInUp {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
+              transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.upperSubtitle {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.mainHeading {
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.metricsGrid {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.metricCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+  max-width: 320px;
+  width: 100%;
+  will-change: transform, opacity;
+}
+
+.iconBox {
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.95;
+  transition: transform 0.3s ease;
+}
+
+.metricCard:hover .iconBox {
+  transform: translateY(-5px);
+}
+
+.statNumber {
+  font-size: clamp(2.8rem, 5vw, 4rem);
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.statLabel {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.statSubtext {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.65);
+  font-weight: 400;
+}
+
+@media (max-width: 600px) {
+  .metricsSection {
+    padding: 4rem 1.2rem;
+  }
+  
+  .headerArea {
+    margin-bottom: 2.5rem;
+  }
+  
+  .statNumber {
+    font-size: 3.2rem;
+  }
+}

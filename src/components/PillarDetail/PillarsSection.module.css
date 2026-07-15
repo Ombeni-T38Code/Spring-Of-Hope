@@ -1,0 +1,227 @@
+/* Container Blocks */
+.sectionContainer {
+  background-color: #0b0f19;
+  color: #ffffff;
+  padding: 80px 24px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 100%;
+  overflow: hidden; /* Prevents unwanted horizontal scroll bars during slide animations */
+}
+
+.outerContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header Area styling */
+.headerArea {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 80px auto;
+  animation: fadeInDown 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.tagline {
+  color: #10b981;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.heading {
+  font-size: 2.75rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.description {
+  color: #9ca3af;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Flex Grid Layout and Alternating Controls */
+.gridWrapper {
+  display: flex;
+  align-items: center;
+  gap: 3%;
+  margin-bottom: 100px;
+  width: 100%;
+  
+  /* Initial state for modern viewport entry animation */
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* Optional: Staggers the row entry slightly via pure CSS if needed without JS intersection observers */
+.gridWrapper:nth-child(2) { animation-delay: 0.2s; }
+.gridWrapper:nth-child(3) { animation-delay: 0.4s; }
+.gridWrapper:nth-child(4) { animation-delay: 0.6s; }
+
+.gridWrapper:last-child {
+  margin-bottom: 0;
+}
+
+.imageRight {
+  flex-direction: row;
+}
+
+.imageLeft {
+  flex-direction: row-reverse;
+}
+
+/* Content Panel Elements */
+.contentSide {
+  flex: 1;
+}
+
+.mainTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 20px;
+}
+
+.paragraph {
+  color: #9ca3af;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+.learnMoreBtn {
+  color: #10b981;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.learnMoreBtn:hover {
+  opacity: 0.9;
+  transform: translateX(6px);
+}
+
+/* Media Panel Frame with Custom Overlays */
+.mediaSide {
+  flex: 1;
+  width: 100%;
+}
+
+.imageCard {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.featureImage {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+  /* Smooth transition for image zooms */
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(11, 15, 25, 0.85) 0%, rgba(11, 15, 25, 0.1) 60%);
+  pointer-events: none;
+  /* Smooth transition for backdrop dimming color changes */
+  transition: background 0.4s ease;
+}
+
+.imageCaption {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect rules for images */
+.imageCard:hover .featureImage {
+  transform: scale(1.04);
+}
+
+.imageCard:hover .imageOverlay {
+  background: linear-gradient(to top, rgba(16, 185, 129, 0.4) 0%, rgba(11, 15, 25, 0.1) 70%);
+}
+
+.imageCard:hover .imageCaption {
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Core Keyframes Definitions */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile & Tablet Optimizations */
+@media (max-width: 992px) {
+  .heading {
+    font-size: 2.25rem;
+  }
+  
+  .mainTitle {
+    font-size: 1.75rem;
+  }
+
+  .featureImage {
+    height: 340px;
+  }
+}
+
+@media (max-width: 768px) {
+  .gridWrapper, 
+  .gridWrapper.imageLeft, 
+  .gridWrapper.imageRight {
+    flex-direction: column;
+    gap: 32px;
+    margin-bottom: 70px;
+  }
+
+  .headerArea {
+    margin-bottom: 50px;
+  }
+
+  .heading {
+    font-size: 2rem;
+  }
+}

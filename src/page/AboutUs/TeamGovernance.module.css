@@ -1,0 +1,482 @@
+/* CONTAINER & GENERAL LAYOUT */
+.container {
+  width: 100%;
+  background-color: #ffffff;
+  color: #374151;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  overflow-x: hidden;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 24px;
+}
+
+/* TYPOGRAPHY COMPONENTS */
+.sectionHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 48px;
+}
+
+.overline {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #10b981;
+  font-weight: 600;
+}
+
+.sectionTitle {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+/* ==========================================================================
+   SECTION 1: HERO (OPTIMIZED FOR DARK BACKGROUND IMAGE PERFORMANCE)
+   ========================================================================== */
+.heroSection {
+  position: relative;
+  height: 75vh;
+  min-height: 550px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-color: #070a12; /* Rich ultra-dark background base */
+}
+
+.heroImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  /* Forces the actual image asset to be dark and atmospheric */
+  filter: brightness(0.25) contrast(1.1) desaturate(0.2);
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Pure dark linear grade matching the section baseline */
+  background: linear-gradient(
+    to right, 
+    rgba(7, 10, 18, 0.95) 0%, 
+    rgba(7, 10, 18, 0.8) 40%, 
+    rgba(7, 10, 18, 0.4) 100%
+  ),
+  linear-gradient(
+    to bottom,
+    rgba(7, 10, 18, 0.2) 0%,
+    rgba(7, 10, 18, 0.7) 100%
+  );
+  z-index: 2;
+}
+
+.heroWrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 24px;
+  position: relative;
+  z-index: 3;
+}
+
+.heroStack {
+  max-width: 650px;
+}
+
+.heroOverline {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #34d399; 
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.heroTitle {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #ffffff; 
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin: 0 0 16px 0;
+}
+
+.heroTitle span {
+  color: #10b981;
+  display: inline-block;
+}
+
+.heroParagraph {
+  font-size: 1.125rem;
+  line-height: 1.65;
+  color: #e5e7eb; 
+  margin: 0;
+}
+
+/* SECTION 2: TEAM PORTRAITS GRID */
+.gridSection {
+  background-color: #edeff1;
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 32px;
+}
+
+.memberNode {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #edeff1;
+  border: 1px solid #edeff1;
+  outline: none;
+}
+
+.interactiveBox {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+}
+
+.memberImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.memberNode:hover .memberImage,
+.memberNode:focus-within .memberImage {
+  transform: scale(1.04);
+}
+
+/* CONTENT STRIP */
+.textStrip {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 32px 24px 24px 24px;
+  background: linear-gradient(to top, #0e1420 70%, rgba(14, 20, 32, 0.8) 85%, transparent 100%);
+  z-index: 4;
+  box-sizing: border-box;
+}
+
+.memberRole {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #60a5fa;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.memberName {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+}
+
+.memberBio {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #9ca3af;
+  margin: 0;
+}
+
+/* HOVER SOCIAL OVERLAY */
+.infoOverlay {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 5;
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.memberNode:hover .infoOverlay,
+.memberNode:focus-within .infoOverlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.actionRow {
+  display: flex;
+  gap: 8px;
+}
+
+.iconCircleLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(17, 24, 39, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #d1d5db;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(8px);
+}
+
+.iconCircleLink:hover {
+  background-color: #3b82f6;
+  color: #ffffff;
+  border-color: #3b82f6;
+}
+
+/* SECTION 3: OPERATIONAL BENCHMARKS (METRICS) */
+.metricsSection {
+  background-color: #0e1422;
+  border-top: 1px solid #1f2937;
+  border-bottom: 1px solid #1f2937;
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.metricCard {
+  background-color: #111827;
+  border: 1px solid #1f2937;
+  border-radius: 12px;
+  padding: 40px 32px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.metricIcon {
+  color: #3b82f6;
+}
+
+.metricValue {
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+
+.metricLabel {
+  font-size: 0.95rem;
+  color: #9ca3af;
+  margin: 0;
+}
+/* SECTION 5: STRATEGIC ROADMAP TIMELINE */
+.timelineSection {
+  background-color: #0b0f19;
+}
+
+.timelineTrack {
+  position: relative;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding-left: 20px;
+}
+
+.timelineTrack::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 4px;
+  width: 2px;
+  background-color: #1f2937;
+}
+
+.timelineItem {
+  position: relative;
+  padding-left: 24px;
+}
+
+.timelineNodePoint {
+  position: absolute;
+  left: -20px;
+  top: 26px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #0b0f19;
+  border: 2px solid #3b82f6;
+  z-index: 2;
+}
+
+.timelineContentBox {
+  background-color: #111827;
+  border: 1px solid #1f2937;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.timelineMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.timelinePhase {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #60a5fa;
+  font-weight: 600;
+}
+
+.timelinePeriod {
+  font-size: 0.85rem;
+  color: #616e85;
+}
+
+.timelineTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+}
+
+.timelineDetails {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #9ca3af;
+  margin: 0;
+}
+
+/* SECTION 6: CALL TO ACTION */
+.ctaSection {
+  position: relative;
+  background-color: #0a0e17;
+  border-top: 1px solid #1f2937;
+  overflow: hidden;
+}
+
+.ctaGridOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(rgba(59, 130, 246, 0.04) 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+  z-index: 1;
+}
+
+.ctaWrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 100px 24px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.ctaContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ctaOverline {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #3b82f6;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.ctaHeading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  margin: 0 0 16px 0;
+}
+
+.ctaParagraph {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #9ca3af;
+  margin: 0 0 32px 0;
+  max-width: 600px;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #3b82f6;
+  color: #ffffff;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.ctaButton:hover {
+  background-color: #2563eb;
+  transform: translateY(-1px);
+}
+
+.ctaIcon {
+  transition: transform 0.2s ease;
+}
+
+.ctaButton:hover .ctaIcon {
+  transform: translate(2px, -2px);
+}
+
+/* RESPONSIVE DESIGN BREAKPOINTS */
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+  
+  .sectionTitle {
+    font-size: 1.75rem;
+  }
+  
+  .wrapper {
+    padding: 60px 20px;
+  }
+  
+  .ctaHeading {
+    font-size: 2rem;
+  }
+  
+  .accordionContent {
+    padding: 0 16px 20px 16px;
+  }
+  
+  .accordionTrigger {
+    padding: 20px 16px;
+  }
+}

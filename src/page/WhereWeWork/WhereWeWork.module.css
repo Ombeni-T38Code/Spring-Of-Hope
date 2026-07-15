@@ -1,0 +1,72 @@
+.sectionPage {
+  padding: 6rem 1.5rem;
+  max-width: 1280px;
+  margin: 0 auto;
+  color: #ffffff;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+@media (min-width: 768px) {
+  .sectionPage {
+    padding: 8rem 4rem;
+  }
+}
+
+.sectionHeader {
+  margin-bottom: 3.5rem;
+  max-width: 36rem;
+}
+
+.tagline {
+  color: #22c55e;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 3rem;
+  }
+}
+
+.gridTwoColumn {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .gridTwoColumn {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.descriptionText {
+  color: #9ca3af;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.mediaPlaceholder {
+  background-color: #161b2c;
+  border-radius: 8px;
+  min-height: 320px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  color: #4b5563;
+}

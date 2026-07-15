@@ -1,0 +1,398 @@
+/* CONTAINER & GENERAL LAYOUT */
+.container {
+  width: 100%;
+  background-color: #f8fafc;
+  color: #334155;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  overflow-x: hidden;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 24px;
+}
+
+/* REUSABLE TYPOGRAPHY STRUCTURES */
+.sectionHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 56px;
+}
+
+.overline {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #059669; /* Emerald Brand Tone */
+  font-weight: 600;
+  display: block;
+}
+
+.sectionTitle {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #064e3b; /* Deep Forest Accent */
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+/* SECTION 1: HERO WITH BLENDED BACKGROUND */
+.heroSection {
+  position: relative;
+  background-color: #064e3b;
+  padding: 160px 24px;
+  overflow: hidden;
+}
+
+.heroBackgroundImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1600');
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+.heroGridOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right, 
+    rgba(6, 78, 59, 0.96) 0%, 
+    rgba(6, 78, 59, 0.82) 50%, 
+    rgba(2, 44, 34, 0.65) 100%
+  );
+  z-index: 2;
+}
+
+.heroWrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 3;
+}
+
+.heroContent {
+  max-width: 720px;
+}
+
+.heroOverline {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #34d399;
+  font-weight: 700;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.heroTitle {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin: 0 0 20px 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.heroParagraph {
+  font-size: 1.15rem;
+  line-height: 1.65;
+  color: #e2fbf0;
+  margin: 0;
+}
+
+/* SECTION 2: METRICS & ASSURANCE CARDS */
+.assuranceSection {
+  background-color: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.matrixGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+}
+
+.matrixCard {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 40px 32px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.01);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+}
+
+.matrixCard:hover {
+  transform: translateY(-2px);
+  border-color: #a7f3d0;
+  box-shadow: 0 12px 20px rgba(6, 78, 59, 0.03);
+}
+
+.matrixIconBox {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background-color: #ecfdf5;
+  color: #059669;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.matrixLabel {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 12px 0;
+}
+
+.matrixDesc {
+  font-size: 0.925rem;
+  line-height: 1.6;
+  color: #64748b;
+  margin: 0;
+}
+
+/* SECTION 3: INTERACTIVE FIELD LEDGER */
+.ledgerSection {
+  background-color: #ffffff;
+}
+
+.ledgerHeaderBlock {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 40px;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+/* FILTER TAB BUTTONS */
+.tabFilters {
+  display: flex;
+  background-color: #f1f5f9;
+  padding: 6px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+}
+
+.filterBtn {
+  background: none;
+  border: none;
+  padding: 8px 18px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #64748b;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.filterBtn:hover {
+  color: #064e3b;
+}
+
+.activeTab {
+  background-color: #ffffff;
+  color: #064e3b;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* LEDGER DATA INTERFACE GRID */
+.ledgerContainer {
+  width: 100%;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+}
+
+.ledgerHeaderRow, .ledgerRow {
+  display: grid;
+  grid-template-columns: 0.7fr 0.8fr 1.5fr 1.2fr 0.8fr 0.5fr;
+  padding: 16px 24px;
+  align-items: center;
+  font-size: 0.875rem;
+}
+
+.ledgerHeaderRow {
+  background-color: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+  font-weight: 600;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.75rem;
+}
+
+.rowWrapper {
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.rowWrapper:last-child {
+  border-bottom: none;
+}
+
+.ledgerRow {
+  background-color: #ffffff;
+  color: #334155;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.ledgerRow:hover {
+  background-color: #fcfdfd;
+}
+
+.rowSelected {
+  background-color: #f0fdf4 !important;
+}
+
+.cellId {
+  font-family: monospace;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.pillarTag {
+  background-color: #f1f5f9;
+  color: #475569;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+
+.cellActivity {
+  font-weight: 600;
+  color: #064e3b;
+}
+
+.cellLocation {
+  color: #64748b;
+}
+
+/* STATUS CHIP DESIGNS */
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.statusVerified {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.statusReview {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.spinIcon {
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+.cellAction {
+  text-align: right;
+}
+
+.viewDetailsBtn {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 4px;
+  transition: color 0.2s ease;
+}
+
+.ledgerRow:hover .viewDetailsBtn {
+  color: #059669;
+}
+
+/* EXPANDABLE LEDGER DETAILS TRAY */
+.detailsTray {
+  overflow: hidden;
+  background-color: #f8fafc;
+}
+
+.detailsInner {
+  padding: 24px 32px;
+  border-top: 1px dashed #e2e8f0;
+}
+
+.detailsHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: #334155;
+  margin-bottom: 8px;
+}
+
+.detailsText {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: #64748b;
+  margin: 0;
+  max-width: 850px;
+}
+
+/* COMPREHENSIVE RESPONSIVE CONTROLS */
+@media (max-width: 992px) {
+  .ledgerHeaderRow {
+    display: none;
+  }
+  
+  .ledgerRow {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 20px;
+  }
+
+  .cellAction {
+    grid-column: span 2;
+    text-align: left;
+    margin-top: 8px;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+  
+  .sectionTitle {
+    font-size: 1.75rem;
+  }
+  
+  .wrapper {
+    padding: 60px 20px;
+  }
+
+  .ledgerHeaderBlock {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

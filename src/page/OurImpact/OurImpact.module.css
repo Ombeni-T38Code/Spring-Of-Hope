@@ -1,0 +1,351 @@
+/* CONTAINER & GENERAL LAYOUT */
+.container {
+  width: 100%;
+  background-color: #f8fafc;
+  color: #334155;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  overflow-x: hidden;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 24px;
+}
+
+/* REUSABLE TYPOGRAPHY STRUCTURES */
+.sectionHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 56px;
+}
+
+.overline {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #059669; 
+  font-weight: 600;
+}
+
+.sectionTitle {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #064e3b; 
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+/* SECTION 1: HERO */
+.heroSection {
+  position: relative;
+  background-color: #064e3b;
+  padding: 160px 24px;
+  overflow: hidden;
+}
+
+/* BACKGROUND IMAGE LAYER */
+.heroBackgroundImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://storage.googleapis.com/dala-prod-public-storage/generated-images/4579a543-a759-4cd2-9cd5-865f854d33f0/team-members-ce3b9fdf-1781853096761.webp');
+  background-size: cover;
+  background-position: center 35%;
+  z-index: 1;
+}
+
+/* GRADIENT OVERLAY FOR BETTER TEXT CONTRAST */
+.heroGridOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right, 
+    rgba(6, 78, 59, 0.94) 0%, 
+    rgba(6, 78, 59, 0.8) 50%, 
+    rgba(2, 44, 34, 0.6) 100%
+  );
+  z-index: 2;
+}
+
+.heroWrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 3;
+}
+
+.heroContent {
+  max-width: 720px;
+}
+
+.heroOverline {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #34d399; 
+  font-weight: 700;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.heroTitle {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin: 0 0 20px 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.heroParagraph {
+  font-size: 1.15rem;
+  line-height: 1.65;
+  color: #e2fbf0;
+  margin: 0;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* SECTION 2: IMPACT STATISTICS GRID */
+.statsSection {
+  background-color: #f8fafc;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 32px;
+}
+
+.statCard {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0 4px 20px rgba(6, 78, 59, 0.05);
+  outline: none;
+}
+
+.statCard:hover,
+.statCard:focus-within {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(6, 78, 59, 0.06), 0 10px 10px -5px rgba(6, 78, 59, 0.04);
+  border-color: #a7f3d0;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.iconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background-color: #ecfdf5;
+  color: #059669;
+}
+
+.statValue {
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: #064e3b;
+  letter-spacing: -0.03em;
+}
+
+.statLabel {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 8px 0;
+}
+
+.statDesc {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #64748b;
+  margin: 0;
+}
+
+/* SECTION 3: STRATEGIC FOCUS NOTE */
+.focusSection {
+  background-color: #f1f5f9;
+  padding-top: 0;
+}
+
+.focusBox {
+  display: flex;
+  gap: 24px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.focusIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: #064e3b;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.focusText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.focusTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #064e3b;
+  margin: 0 0 8px 0;
+}
+
+.focusParagraph {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #475569;
+  margin: 0;
+}
+
+/* SECTION 4: CALL TO ACTION */
+.ctaSection {
+  position: relative;
+  background-color: #064e3b;
+  overflow: hidden;
+}
+
+.ctaGridOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+  z-index: 1;
+}
+
+.ctaWrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 100px 24px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.ctaContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ctaOverline {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #a7f3d0;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.ctaHeading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  margin: 0 0 16px 0;
+}
+
+.ctaParagraph {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #d1fae5;
+  margin: 0 0 32px 0;
+  max-width: 600px;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #059669;
+  color: #ffffff;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.ctaButton:hover {
+  background-color: #047857;
+  transform: translateY(-1px);
+}
+
+.ctaIcon {
+  transition: transform 0.2s ease;
+}
+
+.ctaButton:hover .ctaIcon {
+  transform: translate(2px, -2px);
+}
+
+/* RESPONSIVE DESIGN BREAKPOINTS */
+@media (max-width: 768px) {
+  .heroSection {
+    padding: 120px 20px;
+  }
+
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+  
+  .sectionTitle {
+    font-size: 1.75rem;
+  }
+  
+  .wrapper {
+    padding: 60px 20px;
+  }
+  
+  .focusBox {
+    flex-direction: column;
+    padding: 24px;
+    gap: 16px;
+  }
+
+  .focusIcon {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .ctaHeading {
+    font-size: 2rem;
+  }
+}

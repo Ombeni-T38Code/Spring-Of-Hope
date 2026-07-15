@@ -1,0 +1,532 @@
+/* Custom Global Properties scoped to module */
+.container {
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --text-main: #1f2937;
+  --text-muted: #4b5563;
+  --bg-offset: #f9fafb;
+  --primary-accent: #059669;
+  --primary-hover: #047857;
+  --border-light: #e5e7eb;
+  
+  font-family: var(--font-sans);
+  color: var(--text-main);
+  background-color: #ffffff;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ==========================================
+   HERO BANNER SECTION
+   ========================================== */
+.heroSection {
+  position: relative;
+  min-height: 550px;
+  /* display: flex; */
+  /* align-items: center; */
+  padding: 5rem 0;
+  background-color: #111827;
+}
+
+.heroImageWrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.heroScrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(17, 24, 39, 0.95) 40%, rgba(17, 24, 39, 0.4) 100%);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 10;
+  max-width: 680px;
+}
+
+.heroOverline {
+  color: #34d399;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.875rem;
+  margin-bottom: 0.75rem;
+}
+
+.heroTitle {
+  color: #ffffff;
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.25rem;
+}
+
+.heroDescription {
+  color: #d1d5db;
+  font-size: clamp(1.1rem, 2vw, 1.25rem);
+  font-weight: 400;
+}
+
+/* ==========================================
+   CORE COMPONENT UTILITIES (SHARED HEADERS)
+   ========================================== */
+.section {
+  padding: 6rem 0;
+}
+
+.sectionHeader {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 4rem auto;
+}
+
+.sectionMainTitle {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+}
+
+.sectionSubtitle {
+  color: var(--text-muted);
+  font-size: 1.125rem;
+}
+
+/* ==========================================
+   SECTION 1: FOCUS ROWS (ALTERNATING LAYOUT)
+   ========================================== */
+.rowList {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.rowItem {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  background: #ffffff;
+}
+
+@media (min-width: 768px) {
+  .rowItem {
+    grid-template-columns: 1fr auto;
+  }
+  .rowItem:nth-child(even) {
+    direction: rtl;
+  }
+  .rowItem:nth-child(even) .rowContent {
+    direction: ltr;
+  }
+  .rowImgContainer {
+    width: 440px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .rowItem {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+  .rowImgContainer {
+    width: auto;
+  }
+}
+
+.rowImgContainer {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+  aspect-ratio: 4 / 3;
+}
+
+.rowImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.rowItem:hover .rowImage {
+  transform: scale(1.03); /* Pure hardware-accelerated image zoom */
+}
+
+.rowContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.rowHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.rowIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.625rem;
+  background-color: var(--bg-offset);
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-light);
+}
+
+.rowTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.rowDesc {
+  color: var(--text-muted);
+  margin-bottom: 1.75rem;
+  text-align: justify;
+}
+
+.rowDonateButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  background-color: var(--primary-accent);
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  text-decoration: none;
+  gap: 0.5rem;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.rowDonateButton:hover {
+  background-color: var(--primary-hover);
+}
+
+.rowDonateButton:active {
+  transform: scale(0.98);
+}
+
+/* ==========================================
+   SECTION 2: METRICS BANNER
+   ========================================== */
+.metricsSection {
+  background-color: var(--bg-offset);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  padding: 5rem 0;
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .metricsGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+.metricItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.metricValue {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 800;
+  color: var(--primary-accent);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.5rem;
+}
+
+.metricLabel {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 0.375rem;
+}
+
+.metricSubtext {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  max-width: 260px;
+}
+
+/* ==========================================
+   SECTION 3: BLUEPRINT ROWS (2-ROW GRID)
+   ========================================== */
+.timelineSection {
+  padding: 6rem 0;
+  background-color: #ffffff;
+}
+
+.blueprintRowList {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 992px) {
+  .blueprintRowList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.blueprintRowCard {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-offset);
+  border: 1px solid var(--border-light);
+  padding: 2rem;
+  border-radius: 0.75rem;
+  gap: 1.5rem;
+  will-change: transform, box-shadow;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.blueprintRowCard:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 10px 25px -8px rgba(0, 0, 0, 0.08);
+}
+
+@media (min-width: 576px) {
+  .blueprintRowCard {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 2.25rem;
+    gap: 2rem;
+  }
+}
+
+.stepBadgeColumn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.stepRowNumber {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--primary-accent);
+  background-color: #ffffff;
+  border: 2px solid var(--border-light);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+}
+
+.stepTextColumn {
+  flex: 1;
+}
+
+.stepRowTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 0.65rem;
+  letter-spacing: -0.01em;
+  color: var(--text-main);
+}
+
+.stepRowDesc {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+  text-align: justify;
+}
+
+/* ==========================================
+   SECTION 4: FAQ ACCORDION (SPLIT LAYOUT)
+   ========================================== */
+.faqSection {
+  padding: 6rem 0;
+  background-color: var(--bg-offset);
+  border-top: 1px solid var(--border-light);
+}
+
+.faqLayout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+}
+
+@media (min-width: 1024px) {
+  .faqLayout {
+    grid-template-columns: 320px 1fr;
+    gap: 5rem;
+  }
+  .faqLeftColumn {
+    position: sticky;
+    top: 2rem;
+    align-self: start;
+  }
+}
+
+.faqLeftColumn .sectionMainTitle {
+  text-align: left;
+}
+
+.faqRightColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faqRow {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.faqRowOpen {
+  border-color: #cbd5e1;
+}
+
+.faqQuestionButton {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  background: transparent;
+  border: none;
+  padding: 1.25rem 1.5rem;
+  cursor: pointer;
+  gap: 1.5rem;
+}
+
+.faqQuestion {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.faqChevron {
+  color: var(--text-muted);
+  flex-shrink: 0;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.chevronRotate {
+  transform: rotate(180deg);
+}
+
+.faqAnswerContainer {
+  overflow: hidden;
+}
+
+.faqAnswer {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  color: var(--text-muted);
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* ==========================================
+   SECTION 5: HIGH CONTRAST PARTNERSHIP CTA
+   ========================================== */
+.ctaSection {
+  padding: 5rem 0 6rem 0;
+  background-color: #ffffff;
+}
+
+.ctaBanner {
+  background: linear-gradient(135deg, #064e3b 0%, #022c22 100%);
+  border-radius: 1.25rem;
+  padding: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  box-shadow: 0 20px 25px -5px rgba(2, 44, 34, 0.15);
+}
+
+@media (min-width: 1024px) {
+  .ctaBanner {
+    flex-direction: row;
+    align-items: center;
+    padding: 4rem;
+  }
+}
+
+.ctaHeaderBlock {
+  max-width: 640px;
+}
+
+.ctaTitle {
+  color: #ffffff;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+}
+
+.ctaDesc {
+  color: #a7f3d0;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  color: #022c22;
+  padding: 0.875rem 1.75rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.ctaButton:hover {
+  background-color: #f3f4f6;
+}
+
+.ctaButton:active {
+  transform: scale(0.98);
+}
