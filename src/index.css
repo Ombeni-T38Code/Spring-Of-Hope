@@ -1,7 +1,7 @@
 :root {
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   
-  /* System Neutrals */
+  /* Light Neutrals */
   --color-slate-50: #f8fafc;
   --color-slate-100: #f1f5f9;
   --color-slate-200: #e2e8f0;
@@ -13,9 +13,9 @@
   --color-slate-900: #0f172a;
 
   /* Theme Accents */
+  --color-emerald-50: #ecfdf5;
   --color-emerald-600: #059669;
   --color-emerald-700: #047857;
-  --color-emerald-50: #ecfdf5;
 }
 
 * {
