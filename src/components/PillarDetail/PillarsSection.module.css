@@ -12,63 +12,71 @@
   --transition-speed: 0.3s;
 }
 
+/* Global Reset Guard against horizontal overflow */
+.sectionContainer,
+.sectionContainer * {
+  box-sizing: border-box;
+}
+
 .sectionContainer {
   width: 100%;
-  padding: 80px 20px;
+  padding: 50px 16px; /* Optimized base padding for mobile */
   background-color: var(--bg-color);
   color: var(--body-text);
   font-family: system-ui, -apple-system, sans-serif;
+  overflow: hidden;
 }
 
 .outerContainer {
+  width: 100%;
   max-width: 1140px;
   margin: 0 auto;
 }
 
 /* Header Section */
 .headerArea {
+  width: 100%;
   max-width: 850px;
-  margin-bottom: 48px;
+  margin-bottom: 32px;
 }
 
-/* Updated Tagline (No background, new accent color) */
+/* Updated Tagline */
 .tagline {
   display: inline-block;
   color: var(--tagline-color);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .heading {
   color: var(--heading-dark);
-  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-size: clamp(1.5rem, 5vw, 2.25rem);
   font-weight: 700;
   line-height: 1.25;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .description {
   color: var(--body-text);
-  font-size: 1.05rem;
-  line-height: 1.7;
+  font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+  line-height: 1.6;
 }
 
-/* Grid Layout */
+/* Grid Layout (Default Mobile Stack) */
 .cardsGrid {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 32px;
+  grid-template-columns: 1fr;
+  gap: 20px;
 }
 
-.cardWide {
-  grid-column: span 4;
-}
-
+.cardWide,
 .cardNormal {
-  grid-column: span 3;
+  grid-column: span 1;
 }
 
 /* Static Card Base */
@@ -84,7 +92,7 @@
 /* Image Container with Dark Overlay Effect */
 .imageCard {
   width: 100%;
-  height: 250px;
+  height: 180px; /* Compact height for mobile viewports */
   overflow: hidden;
   background-color: #000000;
   position: relative;
@@ -109,7 +117,7 @@
 
 /* Content Body */
 .contentSide {
-  padding: 32px;
+  padding: 20px; /* Compact padding for small screens */
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -117,17 +125,18 @@
 
 .mainTitle {
   color: var(--heading-color);
-  font-size: 1.35rem;
+  font-size: 1.2rem;
   font-weight: 700;
   line-height: 1.3;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
+  word-wrap: break-word;
 }
 
 .paragraph {
   color: var(--muted-text);
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin-bottom: 24px;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  margin-bottom: 16px;
   flex-grow: 1;
 }
 
@@ -136,7 +145,7 @@
   color: var(--link-color);
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -158,23 +167,80 @@
   }
 }
 
-/* Responsive Layout Styles */
-@media (max-width: 900px) {
-  .cardsGrid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .cardWide,
-  .cardNormal {
-    grid-column: span 1;
-  }
-
+/* Tablet Layout (768px and up) */
+@media (min-width: 768px) {
   .imageCard {
     height: 220px;
   }
 
+  .contentSide {
+    padding: 28px;
+  }
+
+  .mainTitle {
+    font-size: 1.3rem;
+  }
+
+  .paragraph {
+    font-size: 0.95rem;
+  }
+}
+
+/* Desktop Layout (1024px and up) */
+@media (min-width: 1024px) {
   .sectionContainer {
-    padding: 50px 16px;
+    padding: 80px 20px;
+  }
+
+  .headerArea {
+    margin-bottom: 48px;
+  }
+
+  .tagline {
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+  }
+
+  .heading {
+    margin-bottom: 16px;
+  }
+
+  .description {
+    line-height: 1.7;
+  }
+
+  .cardsGrid {
+    grid-template-columns: repeat(7, 1fr);
+    gap: 32px;
+  }
+
+  .cardWide {
+    grid-column: span 4;
+  }
+
+  .cardNormal {
+    grid-column: span 3;
+  }
+
+  .imageCard {
+    height: 250px;
+  }
+
+  .contentSide {
+    padding: 32px;
+  }
+
+  .mainTitle {
+    font-size: 1.35rem;
+    margin-bottom: 12px;
+  }
+
+  .paragraph {
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+
+  .learnMoreBtn {
+    font-size: 0.95rem;
   }
 }

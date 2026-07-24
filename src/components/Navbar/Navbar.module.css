@@ -1,25 +1,17 @@
 .navBar {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
   height: 70px;
-  background-color: transparent;
-  border-bottom: 1px solid rgba(255, 255, 255, 0);
+  background-color: #0f121d;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* padding: 0 1.5rem; */
+  padding: 0 1.5rem;
   z-index: 1000;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  transition: background-color 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease;
-}
-
-/* Active state when page is scrolled */
-.scrolled {
-  background-color: #646464;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(12px);
 }
 
 @media (min-width: 1024px) {
@@ -27,30 +19,16 @@
 }
 
 /* Brand/Logo Layout Styling Rules */
-.brandLink { 
-  text-decoration: none; 
-  margin: 0;
-  padding: 0;
-}
-
-.brandContainer { 
-  display: flex; 
-  flex-direction: column; 
-}
-
-.logoRow { 
-  display: flex; 
-  align-items: center; 
-  justify-content: flex-start; /* Ensures logo starts at the very beginning */
-  gap: 1px; /* Space between logo image and text */
-}
+.brandLink { text-decoration: none; }
+.brandContainer { display: flex; flex-direction: column; }
+.logoRow { display: flex; align-items: center; gap: 0.75rem; }
 
 .logoImage {
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   object-fit: contain;
-  border-radius: 50%;
-  margin-left: 0; /* Strict left alignment */
+  border-radius: 20px;
+  /* background-color: #ffffff; */
 }
 
 .logoTextGroup {
@@ -64,11 +42,10 @@
   font-weight: 700;
   font-size: 1.15rem;
   letter-spacing: -0.01em;
-  line-height: 1.2;
 }
 
 .taglineText {
-  color: #09d655;
+  color: #6b7280;
   font-size: 0.65rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -77,9 +54,7 @@
 }
 
 /* Link Group Base Containment Trays */
-.navLinks { 
-  display: none; 
-}
+.navLinks { display: none; }
 
 @media (min-width: 768px) {
   .navLinks {
@@ -103,14 +78,10 @@
   color: #4ade80;
 }
 
-.desktopActions { 
-  display: none; 
-}
+.desktopActions { display: none; }
 
 @media (min-width: 768px) {
-  .desktopActions { 
-    display: block; 
-  }
+  .desktopActions { display: block; }
 }
 
 .donateLinkBtn {
@@ -145,9 +116,7 @@
 }
 
 @media (min-width: 768px) {
-  .mobileMenuTrigger { 
-    display: none; 
-  }
+  .mobileMenuTrigger { display: none; }
 }
 
 /* Mobile Sidebar Drawer Layout Elements */
@@ -166,21 +135,9 @@
   overflow-y: auto;
 }
 
-.drawerOpen { 
-  right: 0; 
-}
-
-.mobileLinksContainer { 
-  display: flex; 
-  flex-direction: column; 
-  gap: 1.5rem; 
-}
-
-.mobileGroupBlock { 
-  display: flex; 
-  flex-direction: column; 
-  gap: 0.5rem; 
-}
+.drawerOpen { right: 0; }
+.mobileLinksContainer { display: flex; flex-direction: column; gap: 1.5rem; }
+.mobileGroupBlock { display: flex; flex-direction: column; gap: 0.5rem; }
 
 .mobileParentLink {
   color: #ffffff;
