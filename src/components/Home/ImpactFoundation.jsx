@@ -1,12 +1,10 @@
 import React from 'react';
 import { Star } from 'lucide-react';
-
-// 1. Import your local images from your assets folder
-// Adjust relative paths ('../../assets/...') to match your file structure
-import communityHandshakeImg from '../../assets/community-handshake.jpg';
-import teamMeetingImg from '../../assets/team-meeting.jpg';
-
 import styles from './ImpactFoundation.module.css';
+
+// Vite native asset URLs
+const communityHandshakeImg = new URL('../../assets/community-handshake.jpg', import.meta.url).href;
+const teamMeetingImg = new URL('../../assets/team-meeting.jpg', import.meta.url).href;
 
 const ImpactFoundation = () => {
   const highlights = [
@@ -42,7 +40,7 @@ const ImpactFoundation = () => {
           </ul>
         </div>
 
-        {/* Right Images Side (Wider Layout) */}
+        {/* Right Images Side */}
         <div className={styles.mediaGallery}>
           <div className={`${styles.galleryCard} ${styles.galleryCardLeft}`}>
             <img 
