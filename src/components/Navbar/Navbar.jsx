@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { HeartHandshake, Menu, X } from "lucide-react";
 import NavDropdown from "./NavDropdown";
@@ -7,10 +7,25 @@ import styles from "./Navbar.module.css";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
+
+  // Toggle background state on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // Navigation Configuration
   const menuConfig = [
@@ -28,16 +43,8 @@ const Navbar = () => {
       links: [
         { label: "Education Hubs", path: "/what-we-do/education" },
         { label: "Livelihoods", path: "/what-we-do/livelihoods" },
-        { label: "MHPSS & Peace Building", path: "/what-we-do/healthcare" },  
+        { label: "MHPSS & Peace Building", path: "/what-we-do/healthcare" },
         { label: "Environment & Climate", path: "/what-we-do/environment" },
-      ],
-    },
-    {
-      title: "Our Impact",
-      basePath: "/impact",
-      links: [
-        { label: "Metrics & Data", path: "/impact/metrics" },
-        { label: "Success Stories", path: "/impact/stories" },
       ],
     },
     {
@@ -52,7 +59,11 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className={styles.navBar}>
+      <nav
+        className={`${styles.navBar} ${
+          isScrolled ? styles.scrolled : ""
+        }`}
+      >
         {/* Logo */}
         <Link to="/" className={styles.brandLink} onClick={closeMenu}>
           <div className={styles.brandContainer}>

@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Team & Leadership | Springs of Hope</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-surface": "#2f3130",
+                    "surface-container-high": "#e9e8e7",
+                    "tertiary-fixed-dim": "#ffb77d",
+                    "on-error": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "on-background": "#1a1c1c",
+                    "secondary": "#455f87",
+                    "secondary-fixed": "#d5e3ff",
+                    "surface-dim": "#dadad9",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-low": "#f4f3f2",
+                    "on-surface": "#1a1c1c",
+                    "on-tertiary-fixed": "#2f1500",
+                    "secondary-fixed-dim": "#adc8f5",
+                    "on-primary-container": "#9dd090",
+                    "surface-container-highest": "#e3e2e1",
+                    "inverse-on-surface": "#f1f0f0",
+                    "error": "#ba1a1a",
+                    "error-container": "#ffdad6",
+                    "surface-container": "#eeeeed",
+                    "on-secondary-container": "#3e5980",
+                    "on-primary-fixed-variant": "#23501e",
+                    "inverse-primary": "#a1d494",
+                    "surface": "#faf9f8",
+                    "on-surface-variant": "#42493e",
+                    "on-secondary-fixed-variant": "#2d486d",
+                    "on-primary-fixed": "#002201",
+                    "surface-variant": "#e3e2e1",
+                    "on-secondary-fixed": "#001c3b",
+                    "tertiary": "#5a2e00",
+                    "on-tertiary-fixed-variant": "#6e3900",
+                    "surface-tint": "#3b6934",
+                    "surface-bright": "#faf9f8",
+                    "outline": "#72796e",
+                    "secondary-container": "#b5d0fd",
+                    "on-tertiary-container": "#ffb273",
+                    "primary-fixed-dim": "#a1d494",
+                    "on-error-container": "#93000a",
+                    "tertiary-container": "#7c4100",
+                    "tertiary-fixed": "#ffdcc3",
+                    "primary-container": "#2d5a27",
+                    "background": "#faf9f8",
+                    "on-primary": "#ffffff",
+                    "primary": "#154212",
+                    "outline-variant": "#c2c9bb",
+                    "primary-fixed": "#bcf0ae"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "2xl": "24px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "margin-mobile": "20px",
+                    "gutter": "24px",
+                    "container-max": "1280px",
+                    "stack-lg": "32px",
+                    "margin-desktop": "64px",
+                    "stack-md": "16px",
+                    "stack-sm": "8px"
+            },
+            "fontFamily": {
+                    "label-md": ["Inter"],
+                    "display-lg": ["Montserrat"],
+                    "caption": ["Inter"],
+                    "headline-sm": ["Montserrat"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "display-lg-mobile": ["Montserrat"],
+                    "headline-md": ["Montserrat"]
+            },
+            "fontSize": {
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                    "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-lg-mobile": ["36px", {"lineHeight": "42px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hero-overlay {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7));
+        }
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md">
+<!-- Header Section -->
+<header class="w-full top-0 sticky z-50 bg-surface dark:bg-surface-dim shadow-sm">
+<div class="flex justify-between items-center h-20 px-margin-desktop max-w-container-max mx-auto">
+<div class="font-headline-sm text-headline-sm text-primary dark:text-primary-fixed-dim font-bold">
+                Springs of Hope
+            </div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-all" href="#">About</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-all" href="#">Programs</a>
+<a class="font-label-md text-label-md text-primary border-b-2 border-primary pb-1" href="#">Get Involved</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-all" href="#">Contact</a>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-md hover:opacity-80 transition-opacity">Donate</button>
+</nav>
+<button class="md:hidden p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative h-[921px] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="A cinematic, high-quality photograph of a diverse community leadership team standing together in front of a sprawling acacia tree in the Kakuma refugee camp. The lighting is warm golden hour, casting long soft shadows and a hopeful glow over the group. The aesthetic is professional yet deeply human, reflecting the resilient and collaborative spirit of a refugee-led humanitarian organization." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9IF-htB58onl6gzwK9Gklu-JafxqWniifopZVUIGXDr2xgtGeoohCQYx84_uBwNWcsjPu3HqF_OOkEGX0BcmBENBT7gk3DTDP3K90CzXN2MFeIljMvr1DUgHWgCYsnPSLZBdAdzop0XsvmsjqyqM_kyKAFNr0irwGW_gg6w4h5_kys9BV5eKp4Qss7sQMFIN1n8zJQBMBmvAbZqm7etFb33RXFIOYbUczG7-Hvq25WaVbSuMy03mN9Jd3ShZF8fXchLckSwxW7j4f"/>
+<div class="absolute inset-0 hero-overlay"></div>
+</div>
+<div class="relative z-10 text-center text-white px-margin-mobile max-w-4xl">
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-6 leading-tight">Building Hope Together Through Community Leadership</h1>
+<p class="font-body-lg text-body-lg mb-8 opacity-90">Honoring refugee agency and providing a stable platform for global advocacy and local change.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<a class="bg-primary text-on-primary px-8 py-4 rounded-lg font-label-md text-center hover:opacity-90 transition-all" href="#team">Meet Our Team</a>
+<a class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-lg font-label-md text-center hover:bg-white/20 transition-all" href="#volunteer">Volunteer With Us</a>
+</div>
+</div>
+</section>
+<!-- Our Story Section -->
+<section class="py-stack-lg px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="text-center mb-stack-lg reveal">
+<span class="text-primary font-label-md tracking-wider">OUR STORY</span>
+<h2 class="font-headline-md text-headline-md mt-2">A Team United by Purpose</h2>
+<p class="mt-4 max-w-2xl mx-auto text-on-surface-variant">Founded by refugees, for refugees. Our leadership reflects the community we serve, ensuring every initiative is rooted in real-world resilience and local wisdom.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter reveal">
+<div class="p-8 bg-surface-container-low rounded-2xl border border-outline-variant hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-primary mb-4 text-4xl" style="font-variation-settings: 'FILL' 1;">group</span>
+<h3 class="font-headline-sm text-headline-sm mb-2 text-primary">Refugee-Led</h3>
+<p class="text-body-md text-on-surface-variant">Voices of lived experience driving every strategic decision.</p>
+</div>
+<div class="p-8 bg-surface-container-low rounded-2xl border border-outline-variant hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-primary mb-4 text-4xl" style="font-variation-settings: 'FILL' 1;">diversity_3</span>
+<h3 class="font-headline-sm text-headline-sm mb-2 text-primary">Community-Centered</h3>
+<p class="text-body-md text-on-surface-variant">Solutions designed from the ground up for maximum local impact.</p>
+</div>
+<div class="p-8 bg-surface-container-low rounded-2xl border border-outline-variant hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-primary mb-4 text-4xl" style="font-variation-settings: 'FILL' 1;">handshake</span>
+<h3 class="font-headline-sm text-headline-sm mb-2 text-primary">Inclusive Leadership</h3>
+<p class="text-body-md text-on-surface-variant">Ensuring youth, women, and marginalized groups have a seat at the table.</p>
+</div>
+<div class="p-8 bg-surface-container-low rounded-2xl border border-outline-variant hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-primary mb-4 text-4xl" style="font-variation-settings: 'FILL' 1;">trending_up</span>
+<h3 class="font-headline-sm text-headline-sm mb-2 text-primary">Growing Together</h3>
+<p class="text-body-md text-on-surface-variant">Scaling our impact through professional growth and global networks.</p>
+</div>
+</div>
+</section>
+<!-- How We Work Section -->
+<section class="bg-surface-container-highest py-stack-lg">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto reveal">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div>
+<h2 class="font-headline-md text-headline-md mb-6">Growing Team Collaboration</h2>
+<p class="text-body-lg text-on-surface-variant mb-8">Our operational model is built on mutual respect and shared accountability. We balance professional rigor with organic community engagement.</p>
+<ul class="space-y-6">
+<li class="flex gap-4">
+<div class="bg-primary-container p-3 rounded-xl h-fit">
+<span class="material-symbols-outlined text-on-primary-fixed">admin_panel_settings</span>
+</div>
+<div>
+<h4 class="font-label-md text-primary">Founder & Executive Director</h4>
+<p class="text-body-md text-on-surface-variant">Setting the vision and steering global advocacy efforts.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<div class="bg-secondary-container p-3 rounded-xl h-fit">
+<span class="material-symbols-outlined text-on-secondary-container">construction</span>
+</div>
+<div>
+<h4 class="font-label-md text-secondary">Programme Support</h4>
+<p class="text-body-md text-on-surface-variant">Technical expertise in education, mental health, and climate action.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<div class="bg-tertiary-container p-3 rounded-xl h-fit">
+<span class="material-symbols-outlined text-tertiary-fixed-dim">volunteer_activism</span>
+</div>
+<div>
+<h4 class="font-label-md text-tertiary-fixed-dim">Community Engagement</h4>
+<p class="text-body-md text-on-surface-variant">Maintaining deep roots and feedback loops within the camp.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="relative h-[500px] rounded-2xl overflow-hidden shadow-xl">
+<img class="w-full h-full object-cover" data-alt="A vibrant and candid classroom scene in Kenya showing a group of diverse refugee students gathered around a laptop with a female teacher. The teacher is smiling warmly, guiding a young boy with his digital literacy tasks. The room is filled with colorful educational posters and hand-drawn charts. The lighting is natural and bright, conveying a sense of energy, empowerment, and forward-looking growth within a community-led education center." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC04AKQKlSPTVT7rxS4Du5hhPjdRslkzezlRbmM1-pViToMV9V1Bb5OPgLsXjxcONJV4cvPQCOdJ4s2isuC9SO237OkG1g1EwStOeofm2xmzVzLBKHARO0tyZGiXRhLgE7GWHauRL6Vfiq-7I_XVlqdzhf7bGaItJBKQbAYvboZ7NFWc6BWWyJL5_1s1ZDAwFcCfK05Q1wdvwRPH05NiE1HKcZGzYjnBM-j6fkX3qQujGtoxUedtszBn-8dslw30hwSHXBFRjR2wnd5"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Meet Our Founding Team -->
+<section class="py-stack-lg px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto" id="team">
+<div class="text-center mb-stack-lg reveal">
+<h2 class="font-headline-md text-headline-md">Meet Our Founding Team</h2>
+<p class="mt-4 text-on-surface-variant">The dedicated individuals turning vision into reality.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 reveal">
+<!-- Team Member 1 -->
+<div class="text-center group">
+<div class="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-surface shadow-lg transition-transform group-hover:scale-105">
+<img class="w-full h-full object-cover" data-alt="Professional headshot of a visionary African leader in a modern humanitarian context. The subject has a dignified and warm expression, dressed in professional yet approachable attire. Soft natural lighting emphasizes strength and hope. The background is softly blurred showing hints of an outdoor office setting in a tropical climate." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJVucGdl-zT9HxgJNk1sH0DxpaHlobAFApro2g_oYfc8XQOP-eL1lHlNVBLLNBpTCf5kR_45plyWA6jV6OV7qqi6bTyK9MdeymMSbPgEs-xnS76iJLZiTXmgWR8oNMvK3r3SD-1GxJ9aqfG0C1utdtPsQK7dNAGGY3wLonZ_-9TgGYeuXV28jKvDb4IshdDsNPXCh9SDQmmZjXbd_8DSQHueiG1uwzbNvHg9AaybclWTrmBcj3bBeE5B_RiP-Qu1tc5xXESUbrn3o8"/>
+</div>
+<h3 class="font-headline-sm text-headline-sm">Executive Director</h3>
+<p class="text-primary font-label-md">Founder & Lead Visionary</p>
+<p class="mt-2 text-body-md text-on-surface-variant px-4">Leading Springs of Hope with over a decade of community advocacy experience.</p>
+</div>
+<!-- Team Member 2 -->
+<div class="text-center group">
+<div class="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-surface shadow-lg transition-transform group-hover:scale-105">
+<img class="w-full h-full object-cover" data-alt="Professional headshot of a female programme coordinator, showing a friendly and capable expression. She is wearing a colorful scarf and professional clothing. The background is a bright, sun-drenched outdoor educational setting. The style is modern humanitarian, focused on dignity and professional agency." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnfbRpu0SgjHOGtB_wJ42r1rhXqXuKGPL40ehW8QXhg4i02FObHo-eHZIGpp9e56g9J8ABWBscE8yk_RSkSuSZvq7gBUOMC7724gRcewJi35VpxP31b6V08dk2QSHzQGI4Mhmed3my02TOUNTv1cXpEvV4i01t_VcuN-TNziSvpu5Tr75FuyjAJTyMLjuK0pVuZGbgZEpUDJVCCq_3oqyA-7Wj2PfCIRCq1FaC0je3xyxIizYesZp7E785qQGLXp8HCLyCLoL69EYc"/>
+</div>
+<h3 class="font-headline-sm text-headline-sm">Programme Coordinator</h3>
+<p class="text-primary font-label-md">Education & Strategy</p>
+<p class="mt-2 text-body-md text-on-surface-variant px-4">Specializing in digital literacy and curriculum development for camp youth.</p>
+</div>
+<!-- Team Member 3 -->
+<div class="text-center group">
+<div class="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-surface shadow-lg transition-transform group-hover:scale-105">
+<img class="w-full h-full object-cover" data-alt="Professional headshot of a community engagement specialist, a man in his 30s with a warm and approachable smile. He is in a clean, professional shirt. Background features the soft textures of a community meeting space. Lighting is natural and flattering." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtJMZRmgB-wTcZJT39OlmvRgeABnqPkyEPgoHuQpjriQA38E2E7WH7HX9QQvqaPbLEIQ_wDo1PfKDoXdYMByTmYCj-Mxmmc1AWD0QzB3yLOAzej1yjoQftAkCMGHtC_NsjDcE6gPhCruQ4q1BlqcOcpDZg1UlEm32vidKW7PeOX8YdqR__kPODyYrrN_752nyX5lcd-z2kQB4pkNJItIcSKy8Drw4pMrwlEc3q_eK-E-tNPwVr2ulgGEyZMJQrTZ7BtZ86I5N9jA2E"/>
+</div>
+<h3 class="font-headline-sm text-headline-sm">Community Lead</h3>
+<p class="text-primary font-label-md">Outreach & Mobilization</p>
+<p class="mt-2 text-body-md text-on-surface-variant px-4">Connecting our programs with every block and community leader in the camp.</p>
+</div>
+<!-- Team Member 4 -->
+<div class="text-center group">
+<div class="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-surface shadow-lg transition-transform group-hover:scale-105">
+<img class="w-full h-full object-cover" data-alt="Professional headshot of a communications officer, a young African professional with a bright expression, holding a camera or notepad. The style is sharp and modern, with a clean background. Soft depth of field creates a premium feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5MVtbIwDl8K0XpIUYW94ktK45ZIFnkRkVui4dtLj5Pz7MLxZBgsZ1Jx-gPD0gi0FTPzwZjWvSeNOIZ8VfQ1D_GJFUeSNswplSZOOS7y3uROvapsvFnQUvhAzmzsWIUMpfq2Ul6HoVD-c2nL-jmDKx56ajWdMlKaTQH1FfIO_dD4SemZ5SO3VjnTuB4y2or3ZZFQzDeJgeoOKfujDZb9JM4g_Dlxz0VQgWGT8NdWdqbveQsOu7AfqNZ3FqzlEGWF3BzcmvpCfaNPPd"/>
+</div>
+<h3 class="font-headline-sm text-headline-sm">Communications Officer</h3>
+<p class="text-primary font-label-md">Storytelling & Advocacy</p>
+<p class="mt-2 text-body-md text-on-surface-variant px-4">Sharing the stories of resilience and progress with our global partners.</p>
+</div>
+<!-- Team Member 5 -->
+<div class="text-center group">
+<div class="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-surface shadow-lg transition-transform group-hover:scale-105">
+<img class="w-full h-full object-cover" data-alt="Professional headshot of an administrative support specialist, exhibiting organizational competence and a kind demeanor. Photographed in an office environment with soft warm lighting. The aesthetic is professional NGO standard." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiP8pDsqvOojviDaCT8duUOEvJqBGizSVLo6iKuUE0Z1Uwv455gB3OO0kvHM1B9hDGiFaRgbihi37bxQUBug9431kUhjwC8bVLKA6VGxSy0W7Lo-LnPA6fuwpijtTOepzcPg2TmF2YwOw9wrwvaryyXW66Agag-EkksCqeIk9_8aYx1Mr6xlpN9x7_Dj_EXtdSks08W84Bb35tE4tMreYvQa19IbbsIECsWiINaLPFr90YT5jqcfI2nuUfpP_OGnCRCXwCIkmrLTGd"/>
+</div>
+<h3 class="font-headline-sm text-headline-sm">Administrative Support</h3>
+<p class="text-primary font-label-md">Operations & Finance</p>
+<p class="mt-2 text-body-md text-on-surface-variant px-4">Ensuring transparency and efficiency in all our foundational operations.</p>
+</div>
+<!-- Team Member 6 -->
+<div class="text-center group">
+<div class="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-surface shadow-lg transition-transform group-hover:scale-105">
+<img class="w-full h-full object-cover" data-alt="Professional headshot of a volunteer coordinator, showing an energetic and welcoming personality. He is dressed in a branded organization polo. The background is a lively community center. Natural light, bright and positive mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwkFHjSm0rIsAgVszJgdmmqQVBUqc7kqCqH_XcXUCAW5WLrpx9UA2MRemGmk_so4yHPYEWGL5-OMC6xJ9SWkyWgv1YUVGI3VkoElXD-beIEV-lnFYFqXwQVPscG7hVDn0f1empoSPA6H_SBlGnZdGl_4bMNpXKlKhMT4jFXIWSSBgVeb1W1yUE6BgTAuK61LnHLiScbjOqlybY1CXaFeWHlxwXhBKMfiMypYyUdcD9EpTY0FCRcrHjkhsSPklNA46e1qwqrgkXjvhZ"/>
+</div>
+<h3 class="font-headline-sm text-headline-sm">Volunteer Coordinator</h3>
+<p class="text-primary font-label-md">Network & Training</p>
+<p class="mt-2 text-body-md text-on-surface-variant px-4">Managing our growing base of local and international volunteers.</p>
+</div>
+</div>
+</section>
+<!-- Our Values Section -->
+<section class="bg-surface-container-low py-stack-lg">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto reveal">
+<div class="text-center mb-stack-lg">
+<h2 class="font-headline-md text-headline-md">Our Values</h2>
+<p class="text-on-surface-variant">The principles that guide our every step.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="p-8 bg-white rounded-2xl shadow-sm border-l-4 border-primary">
+<h4 class="font-headline-sm text-headline-sm mb-3">Integrity</h4>
+<p class="text-on-surface-variant">Honest and transparent in every action we take for our community.</p>
+</div>
+<div class="p-8 bg-white rounded-2xl shadow-sm border-l-4 border-secondary">
+<h4 class="font-headline-sm text-headline-sm mb-3">Inclusion</h4>
+<p class="text-on-surface-variant">Creating a space where everyone belongs regardless of background.</p>
+</div>
+<div class="p-8 bg-white rounded-2xl shadow-sm border-l-4 border-tertiary">
+<h4 class="font-headline-sm text-headline-sm mb-3">Collaboration</h4>
+<p class="text-on-surface-variant">Working together with global partners and local neighbors.</p>
+</div>
+<div class="p-8 bg-white rounded-2xl shadow-sm border-l-4 border-primary">
+<h4 class="font-headline-sm text-headline-sm mb-3">Compassion</h4>
+<p class="text-on-surface-variant">Leading with heart and deep empathy for the lived experience of others.</p>
+</div>
+<div class="p-8 bg-white rounded-2xl shadow-sm border-l-4 border-secondary">
+<h4 class="font-headline-sm text-headline-sm mb-3">Accountability</h4>
+<p class="text-on-surface-variant">Taking full responsibility for the promises we make to our people.</p>
+</div>
+<div class="p-8 bg-white rounded-2xl shadow-sm border-l-4 border-tertiary">
+<h4 class="font-headline-sm text-headline-sm mb-3">Leadership</h4>
+<p class="text-on-surface-variant">Empowering new voices to step up and shape the future of Kenya.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Volunteer CTA Section -->
+<section class="py-stack-lg px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto reveal" id="volunteer">
+<div class="bg-primary rounded-2xl overflow-hidden flex flex-col md:flex-row shadow-2xl">
+<div class="md:w-1/2 h-80 md:h-auto">
+<img class="w-full h-full object-cover" data-alt="A beautiful, high-contrast photograph of a community volunteer project in Kenya. A group of diverse people are planting young saplings in a sun-drenched field, working together with smiles and shared purpose. The lighting is golden and warm, highlighting the rich soil and vibrant green leaves. The overall mood is one of active growth, environmental stewardship, and hopeful collective action." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXppRtUNoTN5MEcldtvmVSAOcm__Jwf90GHEHKn03-qEFSfKfOhPWcoz884RJbeuJolwavQ28rLPAOgZsBngMU4gY_Vk8Dh1P6sqbiT8MGwhdZHo77SR7Zs6uiCOoo4n2NQS8dpAmJf7c7i3IX08MK7SIOt9xzQBZHRdppE2ve09QYLIRIPynxi4FBUt42HFc7adqoF1CoEAmgp-489Om7axWGx1Mqiu_KUL8e7tnAC8AyDzn0t_WD1jIxfSGObZrk_SUb8o1L1K8o"/>
+</div>
+<div class="md:w-1/2 p-12 text-white flex flex-col justify-center">
+<h2 class="font-headline-md text-headline-md mb-6">Your Expertise Can Change Lives</h2>
+<p class="mb-8 opacity-90 text-body-lg">We are always looking for passionate individuals to join our mission. Whether on the ground in Kenya or remotely from your home.</p>
+<div class="grid grid-cols-2 gap-4 mb-8">
+<div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary-fixed">check_circle</span> Outreach</div>
+<div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary-fixed">check_circle</span> Mentorship</div>
+<div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary-fixed">check_circle</span> Youth Support</div>
+<div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary-fixed">check_circle</span> Climate Initiatives</div>
+<div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary-fixed">check_circle</span> Event Planning</div>
+<div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary-fixed">check_circle</span> Admin & Tech</div>
+</div>
+<button class="bg-white text-primary px-8 py-4 rounded-lg font-label-md hover:bg-surface-container-low transition-all self-start">Apply to Volunteer</button>
+</div>
+</div>
+</section>
+<!-- Growing Together Vision Cards -->
+<section class="py-stack-lg bg-surface reveal">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<h2 class="font-headline-md text-headline-md text-center mb-stack-lg">Growing Together</h2>
+<div class="relative">
+<!-- Subtle Timeline Line -->
+<div class="hidden lg:block absolute top-1/2 left-0 w-full h-0.5 bg-outline-variant -translate-y-1/2 z-0"></div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter relative z-10">
+<div class="bg-white p-6 rounded-2xl shadow-sm border border-outline-variant text-center">
+<div class="w-12 h-12 bg-primary-container text-on-primary-fixed rounded-full flex items-center justify-center mx-auto mb-4">1</div>
+<h4 class="font-headline-sm text-headline-sm mb-2">Foundation</h4>
+<p class="text-body-md text-on-surface-variant">Establishing our core presence in Kakuma and building community trust.</p>
+</div>
+<div class="bg-white p-6 rounded-2xl shadow-sm border border-outline-variant text-center">
+<div class="w-12 h-12 bg-primary-container text-on-primary-fixed rounded-full flex items-center justify-center mx-auto mb-4">2</div>
+<h4 class="font-headline-sm text-headline-sm mb-2">Expansion</h4>
+<p class="text-body-md text-on-surface-variant">Launching the Education Center and Mental Health support wings.</p>
+</div>
+<div class="bg-white p-6 rounded-2xl shadow-sm border border-outline-variant text-center">
+<div class="w-12 h-12 bg-primary-container text-on-primary-fixed rounded-full flex items-center justify-center mx-auto mb-4">3</div>
+<h4 class="font-headline-sm text-headline-sm mb-2">Sustainability</h4>
+<p class="text-body-md text-on-surface-variant">Building local climate resilience and agricultural independence.</p>
+</div>
+<div class="bg-white p-6 rounded-2xl shadow-sm border border-outline-variant text-center">
+<div class="w-12 h-12 bg-primary-container text-on-primary-fixed rounded-full flex items-center justify-center mx-auto mb-4">4</div>
+<h4 class="font-headline-sm text-headline-sm mb-2">Advocacy</h4>
+<p class="text-body-md text-on-surface-variant">Influencing global refugee policy through direct community voices.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-stack-lg px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto reveal">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+<div>
+<h2 class="font-headline-md text-headline-md mb-6">Contact Our Leadership</h2>
+<p class="text-body-lg text-on-surface-variant mb-8">We welcome inquiries from potential partners, volunteers, and supporters. Let’s build the future together.</p>
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-3xl">location_on</span>
+<div>
+<p class="font-label-md">Location</p>
+<p class="text-on-surface-variant">Kakuma Refugee Camp, Turkana County, Kenya</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-3xl">mail</span>
+<div>
+<p class="font-label-md">Email</p>
+<p class="text-on-surface-variant">springshope784@gmail.com</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-3xl">public</span>
+<div>
+<p class="font-label-md">Global Support</p>
+<p class="text-on-surface-variant">Remote collaborations welcome worldwide</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container rounded-2xl p-8 md:p-12">
+<form action="#" class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-md text-on-surface">Name</label>
+<input class="w-full bg-white border-outline-variant rounded-lg p-3 focus:ring-primary focus:border-primary" placeholder="Your full name" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-on-surface">Email</label>
+<input class="w-full bg-white border-outline-variant rounded-lg p-3 focus:ring-primary focus:border-primary" placeholder="email@example.com" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-on-surface">Subject</label>
+<input class="w-full bg-white border-outline-variant rounded-lg p-3 focus:ring-primary focus:border-primary" placeholder="Inquiry about..." type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-on-surface">Message</label>
+<textarea class="w-full bg-white border-outline-variant rounded-lg p-3 focus:ring-primary focus:border-primary" placeholder="How can we help?" rows="4"></textarea>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 rounded-lg font-label-md hover:opacity-90 transition-all" type="submit">Send Message</button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Section -->
+<footer class="w-full mt-stack-lg bg-surface-container-highest dark:bg-inverse-surface">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-stack-lg max-w-container-max mx-auto text-on-surface dark:text-inverse-on-surface">
+<div class="col-span-1 md:col-span-1">
+<div class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim font-bold mb-4">
+                    Springs of Hope
+                </div>
+<p class="font-body-md text-body-md opacity-80">Empowering refugee-led growth and resilience in Kenya.</p>
+</div>
+<div>
+<h4 class="font-label-md text-label-md mb-6 uppercase tracking-wider">Organization</h4>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">About Us</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Our Programs</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Education Center</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md mb-6 uppercase tracking-wider">Impact</h4>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Mental Health Support</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Climate Initiatives</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md mb-6 uppercase tracking-wider">Connect</h4>
+<div class="flex gap-4">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+</div>
+<p class="mt-8 font-caption text-caption opacity-70">
+                    © 2024 Springs of Hope. Refugee-led empowerment in Kenya.
+                </p>
+</div>
+</div>
+</footer>
+<script>
+        // Simple Intersection Observer for scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body></html>

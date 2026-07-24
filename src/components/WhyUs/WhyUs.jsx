@@ -13,32 +13,34 @@ const WhyUs = () => {
           observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.15 }
+      { threshold: 0.2 }
     );
 
-    if (sectionRef.current) observer.observe(sectionRef.current);
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
     return () => observer.disconnect();
   }, []);
 
   return (
-    <section
-      className={`${styles.container} ${
-        isVisible ? styles.animateVisible : ''
-      }`}
-      ref={sectionRef}
+    <section 
+      ref={sectionRef} 
+      className={`${styles.whyUsSection} ${isVisible ? styles.animateIn : ''}`}
     >
-      <div className={styles.innerContent}>
-        <span className={styles.tagline}>Our Focus Areas</span>
+      <div className={styles.container}>
+        <h2 className={styles.title}>WHY US? WHY NOW?</h2>
 
-        <h2 className={styles.heading}>
-          Creating opportunities for refugees and host communities to learn,
-          grow, and build sustainable livelihoods.
-        </h2>
+        <h3 className={styles.subtitle}>
+          We believe every displaced person deserves the opportunity to learn, earn,
+          <br className={styles.desktopBr} />
+          thrive, and lead change.
+        </h3>
 
-        <p className={styles.descriptionText}>
-          Through livelihoods, education, and environmental action, we empower
-          individuals with skills, opportunities, and support to achieve
-          self-reliance, resilience, and lasting community impact.
+        <div className={styles.divider}></div>
+
+        <p className={styles.description}>
+          We are a refugee-led organization committed to creating pathways for displaced people and host communities to access quality education, digital inclusion, sustainable livelihoods, environmental stewardship, and community-led advocacy. By investing in people, strengthening local leadership, and promoting social enterprise, we empower communities to become self-reliant, resilient, and equipped to build a future filled with dignity, opportunity, and hope.
         </p>
       </div>
     </section>

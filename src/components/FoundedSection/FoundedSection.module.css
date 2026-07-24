@@ -1,101 +1,76 @@
 .sectionContainer {
-  background-color: #0f121d;
-  padding: 3rem 1.5rem;
-  font-family: system-ui, -apple-system, sans-serif;
+  background-color: #f7f5f0;
+  padding: 5rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-@media (min-width: 1024px) {
-  .sectionContainer {
-    padding: 5rem 4rem;
-  }
+.animateVisible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
+/* Wider grid layout for desktop */
 .gridWrapper {
-  max-width: 1280px;
-  margin: 0 auto;
+  max-width: 1200px; /* Increased max width to accommodate the larger image */
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2.5rem;
+  gap: 3rem;
   align-items: center;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .gridWrapper {
-    grid-template-columns: 1.1fr 0.9fr;
+    /* Image column gets 1.25fr (wider), text gets 1fr */
+    grid-template-columns: 1.25fr 1fr;
     gap: 3.5rem;
   }
 }
 
-/* Media/Image Handling Styles */
 .mediaSide {
   width: 100%;
-  opacity: 0;
-  transform: translateX(-40px);
-  transition: opacity 1s cubic-bezier(0.25, 1, 0.5, 1),
-              transform 1s cubic-bezier(0.25, 1, 0.5, 1);
+  display: flex;
+  align-items: center;
 }
 
 .imageCard {
-  position: relative;
   width: 100%;
-  border-radius: 4px;
+  border-radius: 12px;
   overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 .teamImage {
   width: 100%;
-  height: auto;
-  display: block;
+  height: 420px; /* Maintained balanced height for the wider aspect ratio */
   object-fit: cover;
-  max-height: 420px;
-}
-
-.imageCaption {
   display: block;
-  font-size: 0.65rem;
-  color: #6b7280;
-  margin-top: 0.4rem;
 }
 
-/* Typography/Content Column Styling */
 .contentSide {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: flex-start;
-  opacity: 0;
-  transform: translateX(40px);
-  transition: opacity 1s cubic-bezier(0.25, 1, 0.5, 1),
-              transform 1s cubic-bezier(0.25, 1, 0.5, 1);
-  transition-delay: 0.1s;
-}
-
-.animateVisible .mediaSide,
-.animateVisible .contentSide {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.tagline {
-  color: #22c55e;
-  text-transform: uppercase;
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  margin-bottom: 0.75rem;
 }
 
 .mainTitle {
-  color: #ffffff;
-  font-size: 2.2rem;
+  font-family: Georgia, serif;
+  color: #15803d;
+  font-size: 2rem;
+  line-height: 1.25;
   font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-  margin-bottom: 1.5rem;
+  margin: 0 0 1.25rem 0;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .mainTitle {
-    font-size: 2.8rem;
+    font-size: 2.25rem;
   }
 }
 
@@ -103,30 +78,40 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.75rem;
+}
+
+.leadParagraph {
+  color: #2b302c;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.6;
+  margin: 0;
 }
 
 .paragraph {
-  color: #9ca3af;
-  font-size: 1rem;
-  line-height: 1.7;
+  color: #4f5450;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0;
 }
 
-/* Call to action button */
 .learnMoreBtn {
-  color: #4ade80;
-  font-weight: 600;
-  font-size: 0.85rem;
-  text-decoration: none;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  border-bottom: 2px solid transparent;
-  padding-bottom: 0.25rem;
-  transition: all 0.2s ease;
+  padding: 0.75rem 1.5rem;
+  border: 1.5px solid #15803d;
+  color: #15803d;
+  background-color: transparent;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
 }
 
 .learnMoreBtn:hover {
-  color: #22c55e;
-  gap: 0.75rem;
+  background-color: #15803d;
+  color: #ffffff;
 }

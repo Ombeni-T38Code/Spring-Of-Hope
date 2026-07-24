@@ -21,7 +21,7 @@
 .heroBg {
   position: absolute;
   inset: 0;
-  background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1920&q=80');
+  background-image: url('../../assets/Hore.jpg');
   background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
@@ -97,7 +97,7 @@
 
 /* highlight text */
 .greenText {
-  color: #22c55e;
+  color: #15803d;
   font-weight: 700;
 }
 
@@ -126,7 +126,7 @@
 }
 
 .blockquoteBlock {
-  border-left: 3px solid #22c55e;
+  border-left: 3px solid #15803d;
   padding-left: 1.25rem;
   margin: 2rem 0;
 }

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Building the Foundation - Springs of Hope</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg-color: #f1f1eb;         /* Soft light gray background */
+      --text-green: #1a3c1e;       /* Forest green heading */
+      --text-gray: #4a5568;        /* Body text color */
+      --bullet-green: #13421b;     /* Dark green icon background */
+      --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg-color);
+      color: var(--text-gray);
+      line-height: 1.6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 60px 20px;
+    }
+
+    .section-wrapper {
+      width: 100%;
+      max-width: 1240px; /* Increased to accommodate wider images */
+      margin: 0 auto;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    /* Left Side Content */
+    .content-side {
+      flex: 1;
+      max-width: 540px;
+    }
+
+    .heading {
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: var(--text-green);
+      line-height: 1.25;
+      margin-bottom: 20px;
+      letter-spacing: -0.01em;
+    }
+
+    .description {
+      font-size: 1rem;
+      color: var(--text-gray);
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* List Items */
+    .feature-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: #2d3748;
+      font-size: 0.98rem;
+      font-weight: 500;
+    }
+
+    .star-badge {
+      width: 26px;
+      height: 26px;
+      background-color: var(--bullet-green);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: #ffffff;
+    }
+
+    .star-badge svg {
+      width: 13px;
+      height: 13px;
+      fill: currentColor;
+    }
+
+    /* Right Side 2-Image Offset Layout (Wider Images) */
+    .images-side {
+      flex: 1.2; /* Allocated slightly more ratio for wider images */
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 20px;
+      max-width: 620px; /* Increased max width */
+    }
+
+    .img-card {
+      width: 290px; /* Increased width from 240px to 290px */
+      height: 320px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      flex-shrink: 0;
+    }
+
+    /* Staggering effect */
+    .img-card-left {
+      margin-top: 30px;
+    }
+
+    .img-card-right {
+      margin-bottom: 30px;
+    }
+
+    .img-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 960px) {
+      .container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .content-side, 
+      .images-side {
+        max-width: 100%;
+        width: 100%;
+      }
+
+      .images-side {
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .heading {
+        font-size: 1.85rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .img-card {
+        width: 48%;
+        height: 220px;
+      }
+      
+      .images-side {
+        gap: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="section-wrapper">
+    <div class="container">
+      
+      <!-- Text Side -->
+      <div class="content-side">
+        <h1 class="heading">Building the Foundation for Lasting Change</h1>
+        
+        <p class="description">
+          During our first month, Springs of Hope has focused on building strong relationships, understanding community priorities, and preparing for long-term impact.
+        </p>
+
+        <ul class="feature-list">
+          <li class="feature-item">
+            <span class="star-badge">
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </span>
+            Officially established as a Refugee-Led Organization
+          </li>
+
+          <li class="feature-item">
+            <span class="star-badge">
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </span>
+            Engaged with refugees, host communities, and local stakeholders
+          </li>
+
+          <li class="feature-item">
+            <span class="star-badge">
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </span>
+            Developed our core program plans
+          </li>
+
+          <li class="feature-item">
+            <span class="star-badge">
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </span>
+            Started building partnerships and volunteer networks
+          </li>
+        </ul>
+      </div>
+
+      <!-- 2 Side-by-Side Images (Increased Width) -->
+      <div class="images-side">
+        <!-- Left Image (Shifted Down) -->
+        <div class="img-card img-card-left">
+          <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80" alt="Handshake in community">
+        </div>
+
+        <!-- Right Image (Shifted Up) -->
+        <div class="img-card img-card-right">
+          <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80" alt="Team meeting at table">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>

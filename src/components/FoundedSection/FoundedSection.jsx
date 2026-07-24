@@ -32,38 +32,37 @@ const FoundedSection = () => {
       ref={sectionRef}
     >
       <div className={styles.gridWrapper}>
+        {/* Left: Image Container */}
         <div className={styles.mediaSide}>
           <div className={styles.imageCard}>
             <img
               src={teamImage}
-              alt="Springs Hope Organization"
+              alt="Springs of Hope community meeting"
               className={styles.teamImage}
             />
-            <span className={styles.imageCaption}>
-              Springs Of Hope
-            </span>
           </div>
         </div>
-        <div className={styles.contentSide}>
-          <span className={styles.tagline}>Who We Are</span>
 
-         <h2 className={styles.mainTitle}>
-            Founded by refugees to strengthen communities.
-        </h2>
+        {/* Right: Text Container (Aligned with Image) */}
+        <div className={styles.contentSide}>
+          <h2 className={styles.mainTitle}>
+            Founded by Refugees. Driven by Communities. Inspired by Hope.
+          </h2>
 
           <div className={styles.textGroup}>
-            <p className={styles.paragraph}>
-              Springs Hope Organization is a community-led nonprofit based in
-              Kakuma, Kenya, dedicated to empowering refugees and host
-              communities through education, sustainable livelihoods, and
-              environmental action.
+            <p className={styles.leadParagraph}>
+              Springs of Hope is a community-led nonprofit organization
+              founded to support refugees and host communities in Kakuma and
+              Kalobeyei.
             </p>
 
             <p className={styles.paragraph}>
-              We work alongside communities to strengthen resilience, promote
-              self-reliance, and create lasting impact through skills
-              development, entrepreneurship, climate initiatives, and inclusive
-              learning opportunities.
+              We believe lasting change begins within the community. By working
+              alongside local leaders, volunteers, and partners, we create practical
+              solutions that strengthen resilience, encourage self-reliance, and
+              improve quality of life. Although our journey has just begun, our
+              commitment is to serve with integrity, inclusion, collaboration, and
+              accountability.
             </p>
           </div>
 

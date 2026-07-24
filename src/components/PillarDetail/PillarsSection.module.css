@@ -1,227 +1,180 @@
-/* Container Blocks */
+:root {
+  --bg-color: #f7f5f0;
+  --card-bg: #ffffff;
+  --heading-color: #15803d;
+  --tagline-color: #030504; /* Vibrant accent color for the tagline */
+  --heading-dark: #15803d;
+  --body-text: #555555;
+  --muted-text: #666666;
+  --link-color: #15803d;
+  --radius-card: 12px;
+  --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.05);
+  --transition-speed: 0.3s;
+}
+
 .sectionContainer {
-  background-color: #0b0f19;
-  color: #ffffff;
-  padding: 80px 24px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   width: 100%;
-  overflow: hidden; /* Prevents unwanted horizontal scroll bars during slide animations */
+  padding: 80px 20px;
+  background-color: var(--bg-color);
+  color: var(--body-text);
+  font-family: system-ui, -apple-system, sans-serif;
 }
 
 .outerContainer {
-  max-width: 1200px;
+  max-width: 1140px;
   margin: 0 auto;
 }
 
-/* Header Area styling */
+/* Header Section */
 .headerArea {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 80px auto;
-  animation: fadeInDown 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  max-width: 850px;
+  margin-bottom: 48px;
 }
 
+/* Updated Tagline (No background, new accent color) */
 .tagline {
-  color: #10b981;
-  text-transform: uppercase;
+  display: inline-block;
+  color: var(--tagline-color);
   font-size: 0.85rem;
-  letter-spacing: 2px;
   font-weight: 700;
-  display: block;
-  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
 }
 
 .heading {
-  font-size: 2.75rem;
-  font-weight: 800;
-  line-height: 1.2;
-  margin-bottom: 20px;
+  color: var(--heading-dark);
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 16px;
 }
 
 .description {
-  color: #9ca3af;
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-
-/* Flex Grid Layout and Alternating Controls */
-.gridWrapper {
-  display: flex;
-  align-items: center;
-  gap: 3%;
-  margin-bottom: 100px;
-  width: 100%;
-  
-  /* Initial state for modern viewport entry animation */
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInUp 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-}
-
-/* Optional: Staggers the row entry slightly via pure CSS if needed without JS intersection observers */
-.gridWrapper:nth-child(2) { animation-delay: 0.2s; }
-.gridWrapper:nth-child(3) { animation-delay: 0.4s; }
-.gridWrapper:nth-child(4) { animation-delay: 0.6s; }
-
-.gridWrapper:last-child {
-  margin-bottom: 0;
-}
-
-.imageRight {
-  flex-direction: row;
-}
-
-.imageLeft {
-  flex-direction: row-reverse;
-}
-
-/* Content Panel Elements */
-.contentSide {
-  flex: 1;
-}
-
-.mainTitle {
-  font-size: 2rem;
-  font-weight: 700;
-  line-height: 1.3;
-  margin-bottom: 20px;
-}
-
-.paragraph {
-  color: #9ca3af;
+  color: var(--body-text);
   font-size: 1.05rem;
-  line-height: 1.6;
-  margin-bottom: 28px;
+  line-height: 1.7;
 }
 
-.learnMoreBtn {
-  color: #10b981;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+/* Grid Layout */
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 32px;
 }
 
-.learnMoreBtn:hover {
-  opacity: 0.9;
-  transform: translateX(6px);
+.cardWide {
+  grid-column: span 4;
 }
 
-/* Media Panel Frame with Custom Overlays */
-.mediaSide {
-  flex: 1;
-  width: 100%;
+.cardNormal {
+  grid-column: span 3;
 }
 
-.imageCard {
-  position: relative;
+/* Static Card Base */
+.card {
+  background-color: var(--card-bg);
+  border-radius: var(--radius-card);
   overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Image Container with Dark Overlay Effect */
+.imageCard {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  background-color: #000000;
+  position: relative;
 }
 
 .featureImage {
   width: 100%;
-  height: 420px;
+  height: 100%;
   object-fit: cover;
   display: block;
-  /* Smooth transition for image zooms */
-  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  opacity: 1;
+  transition: opacity var(--transition-speed) ease,
+    filter var(--transition-speed) ease;
 }
 
-.imageOverlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to top, rgba(11, 15, 25, 0.85) 0%, rgba(11, 15, 25, 0.1) 60%);
-  pointer-events: none;
-  /* Smooth transition for backdrop dimming color changes */
-  transition: background 0.4s ease;
+/* Image darkens on hover or touch/tap */
+.imageCard:hover .featureImage,
+.imageCard:active .featureImage {
+  opacity: 0.75;
+  filter: brightness(0.8);
 }
 
-.imageCaption {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: color 0.3s ease, transform 0.3s ease;
+/* Content Body */
+.contentSide {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
-/* Hover effect rules for images */
-.imageCard:hover .featureImage {
-  transform: scale(1.04);
+.mainTitle {
+  color: var(--heading-color);
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 12px;
 }
 
-.imageCard:hover .imageOverlay {
-  background: linear-gradient(to top, rgba(16, 185, 129, 0.4) 0%, rgba(11, 15, 25, 0.1) 70%);
+.paragraph {
+  color: var(--muted-text);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  flex-grow: 1;
 }
 
-.imageCard:hover .imageCaption {
-  color: #ffffff;
-  transform: translateY(-2px);
+/* Button Hover Style */
+.learnMoreBtn {
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  transition: color var(--transition-speed) ease;
 }
 
-/* Core Keyframes Definitions */
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.learnMoreBtn svg {
+  transition: transform var(--transition-speed) ease;
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Mobile & Tablet Optimizations */
-@media (max-width: 992px) {
-  .heading {
-    font-size: 2.25rem;
-  }
-  
-  .mainTitle {
-    font-size: 1.75rem;
+@media (hover: hover) and (pointer: fine) {
+  .learnMoreBtn:hover {
+    color: #166534;
   }
 
-  .featureImage {
-    height: 340px;
+  .learnMoreBtn:hover svg {
+    transform: translateX(5px);
   }
 }
 
-@media (max-width: 768px) {
-  .gridWrapper, 
-  .gridWrapper.imageLeft, 
-  .gridWrapper.imageRight {
-    flex-direction: column;
-    gap: 32px;
-    margin-bottom: 70px;
+/* Responsive Layout Styles */
+@media (max-width: 900px) {
+  .cardsGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
 
-  .headerArea {
-    margin-bottom: 50px;
+  .cardWide,
+  .cardNormal {
+    grid-column: span 1;
   }
 
-  .heading {
-    font-size: 2rem;
+  .imageCard {
+    height: 220px;
+  }
+
+  .sectionContainer {
+    padding: 50px 16px;
   }
 }

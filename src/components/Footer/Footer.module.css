@@ -1,9 +1,9 @@
 .footerContainer {
-  background-color: #0b0f19;
-  color: #9ca3af;
+  background-color: #646464; /* Mid-gray background */
+  color: #f1f5f9; /* Light secondary text for high readability */
   font-family: system-ui, -apple-system, sans-serif;
   padding: 4rem 1.5rem 2rem 1.5rem;
-  border-top: 1px solid #1e293b;
+  border-top: 1px solid rgba(255, 255, 255, 0.2); /* Subtle white border */
   position: relative;
   z-index: 10;
 }
@@ -41,8 +41,8 @@
 }
 
 .logoImage {
-  width: 42px;
-  height: 42px;
+  width: 70px;
+  height: 70px;
   object-fit: contain;
 }
 
@@ -50,7 +50,7 @@
   font-size: 1.5rem;
   font-weight: 900;
   letter-spacing: -0.03em;
-  color: #ffffff;
+  color: #ffffff; /* Crisp white for brand heading */
 }
 
 .brandDesc {
@@ -78,7 +78,7 @@
 }
 
 .linkGroup h3 {
-  color: #ffffff;
+  color: #ffffff; /* Crisp white for headings */
   font-size: 0.9rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -87,21 +87,21 @@
 }
 
 .linkGroup a {
-  color: #9ca3af;
+  color: #f1f5f9; /* Off-white for links */
   text-decoration: none;
   font-size: 0.95rem;
   transition: color 0.2s ease;
 }
 
 .linkGroup a:hover {
-  color: #4ade80;
+  color: #86efac; /* Mint green hover for high contrast on gray */
 }
 
 .footerBottom {
   max-width: 1280px;
   margin: 4rem auto 0 auto;
   padding-top: 1.5rem;
-  border-top: 1px solid #1e293b;
+  border-top: 1px solid rgba(255, 255, 255, 0.2); /* Subtle divider */
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -122,11 +122,11 @@
 }
 
 .bottomLinks a {
-  color: #9ca3af;
+  color: #f1f5f9;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .bottomLinks a:hover {
-  color: #4ade80;
+  color: #86efac;
 }

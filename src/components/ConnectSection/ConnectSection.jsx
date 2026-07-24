@@ -48,7 +48,6 @@ const ConnectSection = () => {
 
   return (
     <section className={styles.connectContainer}>
-
       {/* TOAST NOTIFICATION */}
       {toast.message && (
         <div
@@ -90,6 +89,9 @@ const ConnectSection = () => {
 
               <input
                 type="email"
+                id="email"
+                name="email"
+                autoComplete="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email address"

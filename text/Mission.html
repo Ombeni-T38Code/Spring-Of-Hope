@@ -1,0 +1,410 @@
+<!DOCTYPE html><html lang="en" class="light"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-container": "#ffb273",
+                      "surface-container-high": "#e9e8e7",
+                      "secondary-fixed": "#d5e3ff",
+                      "on-primary-container": "#9dd090",
+                      "error-container": "#ffdad6",
+                      "primary-container": "#2d5a27",
+                      "surface-container": "#eeeeed",
+                      "on-error-container": "#93000a",
+                      "on-tertiary-fixed": "#2f1500",
+                      "surface-container-low": "#f4f3f2",
+                      "secondary-fixed-dim": "#adc8f5",
+                      "on-tertiary": "#ffffff",
+                      "surface": "#faf9f8",
+                      "tertiary": "#5a2e00",
+                      "tertiary-fixed": "#ffdcc3",
+                      "on-secondary-container": "#3e5980",
+                      "surface-tint": "#3b6934",
+                      "primary-fixed-dim": "#a1d494",
+                      "primary-fixed": "#bcf0ae",
+                      "on-tertiary-fixed-variant": "#6e3900",
+                      "on-secondary-fixed-variant": "#2d486d",
+                      "inverse-primary": "#a1d494",
+                      "primary": "#154212",
+                      "on-surface-variant": "#42493e",
+                      "tertiary-fixed-dim": "#ffb77d",
+                      "surface-dim": "#dadad9",
+                      "outline-variant": "#c2c9bb",
+                      "tertiary-container": "#7c4100",
+                      "on-error": "#ffffff",
+                      "surface-variant": "#e3e2e1",
+                      "surface-container-highest": "#e3e2e1",
+                      "surface-bright": "#faf9f8",
+                      "outline": "#72796e",
+                      "on-background": "#1a1c1c",
+                      "background": "#faf9f8",
+                      "on-primary-fixed-variant": "#23501e",
+                      "on-primary": "#ffffff",
+                      "error": "#ba1a1a",
+                      "secondary-container": "#b5d0fd",
+                      "inverse-on-surface": "#f1f0f0",
+                      "on-primary-fixed": "#002201",
+                      "on-secondary": "#ffffff",
+                      "inverse-surface": "#2f3130",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary": "#455f87",
+                      "on-secondary-fixed": "#001c3b",
+                      "on-surface": "#1a1c1c",
+                      "brand-teal": "#0F766E",
+                      "brand-green": "#16A34A",
+                      "brand-amber": "#F59E0B"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-mobile": "20px",
+                      "stack-lg": "32px",
+                      "gutter": "24px",
+                      "container-max": "1280px",
+                      "unit": "8px",
+                      "stack-md": "16px",
+                      "margin-desktop": "64px",
+                      "stack-sm": "8px"
+              },
+              "fontFamily": {
+                      "display-lg": ["Montserrat"],
+                      "body-md": ["Inter"],
+                      "label-md": ["Inter"],
+                      "headline-md": ["Montserrat"],
+                      "caption": ["Inter"],
+                      "headline-sm": ["Montserrat"],
+                      "body-lg": ["Inter"],
+                      "display-lg-mobile": ["Montserrat"]
+              },
+              "fontSize": {
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                      "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                      "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                      "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "display-lg-mobile": ["36px", {"lineHeight": "42px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+              }
+            },
+          },
+        }
+    }catch(_e){}</script><meta charset="utf-8"></head><body class="bg-background text-on-surface font-body-md">
+<!-- TopNavBar -->
+<header class="w-full top-0 sticky z-50 bg-surface dark:bg-surface-dim shadow-sm">
+<nav class="flex justify-between items-center h-20 px-margin-desktop max-w-container-max mx-auto transition-all duration-200 ease-in-out">
+<div class="font-headline-sm text-headline-sm text-primary dark:text-primary-fixed-dim font-bold">Springs of Hope</div>
+<div class="hidden md:flex items-center gap-stack-lg">
+<a href="#" class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-opacity">About</a>
+<a href="#" class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-opacity">Programs</a>
+<a href="#" class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-opacity">Get Involved</a>
+<a href="#" class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-opacity">Contact</a>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-md hover:opacity-80 transition-opacity">Donate</button>
+</div>
+<button class="md:hidden material-symbols-outlined text-on-surface">menu</button>
+</nav>
+</header>
+<main class="">
+<!-- Section 1: Hero Banner -->
+<section class="relative w-full min-h-[70vh] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img src="https://lh3.googleusercontent.com/aida/AP1WRLv_cF6GIMD4icueWXHRgsBLdOJTgtHQvmMkl2H5BYQskZB0Wdxpm52V5w0Hl6y8Od9LcN0CuNEzQcBAXDBfXw8ICS0w2AbXNJacd6MYlKsUiZ8U5MXOjNvnCtvXBr7AyxEBaSyLfzvCS8L-XPmGdHswnFALi_4qMO3l0o6cuOUlfd9AbxFJMKceRshPAnuzqETA4I9CksxWUxcYJ1jHJhMjZFHHFYY-5a_CmScq3VPNNdScoBj6jpek5khC" class="w-full h-full object-cover" alt="Community Gathering">
+<div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-transparent"></div>
+</div>
+<div class="relative z-10 px-margin-desktop max-w-container-max mx-auto text-white py-stack-lg">
+<span class="font-label-md text-label-md bg-white/20 backdrop-blur-md px-4 py-1 rounded-full border border-white/30 mb-stack-md inline-block">MISSION &amp; VISION</span>
+<h1 class="font-display-lg text-display-lg md:text-display-lg max-w-2xl mb-stack-md">Our Mission &amp; Vision</h1>
+<p class="font-body-lg text-body-lg max-w-2xl mb-stack-md opacity-90">Supporting refugees and host communities through locally led solutions that promote dignity, resilience, self-reliance, and sustainable development.</p>
+<p class="font-body-md text-body-md max-w-xl mb-stack-lg opacity-80">At Springs of Hope, our mission and vision guide every initiative we undertake, ensuring our impact is rooted in the voices of those we serve.</p>
+<div class="flex flex-wrap gap-stack-md">
+<button class="bg-brand-green text-white px-8 py-3 rounded-lg font-label-md hover:shadow-lg transition-all">Explore Our Programs</button>
+<button class="bg-white/10 backdrop-blur-md border border-white text-white px-8 py-3 rounded-lg font-label-md hover:bg-white/20 transition-all">Get Involved</button>
+</div>
+</div>
+</section>
+<!-- Section 2: Our Mission -->
+<section class="py-stack-lg px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter items-center mb-stack-lg">
+<div class="relative">
+<img src="https://lh3.googleusercontent.com/aida/AP1WRLuS4KxNmzRK3nIQP3l6CL_BmXOV9Z_eCvVN5iULJg_ajn1ZT2AFSbC7htHzv5kn3uc8f4V-0J6HeU65bZTnT3v5MxMgpnfMof02OUo2SXunqKEJD2XsdGTaC8CTVto_xsRQRPbWa-wWItE7nemuOwqIiZL0SfbsGI9sn8xwKVpuNNoS3pCx74T_ZpZbbHXodvQZrwxe5wGY2pYzFdinG0x3naCIaWBX2yDJ6212UH3Y0ThwldYP7dNlEKFA" class="w-full aspect-square object-cover rounded-xl shadow-lg" alt="Mentorship and Education">
+<div class="absolute -bottom-6 -right-6 w-32 h-32 bg-brand-amber rounded-full opacity-10 blur-3xl"></div>
+</div>
+<div class="space-y-stack-md">
+<h2 class="font-headline-md text-headline-md text-brand-teal">Our Mission</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                        To empower refugees and host communities through education, sustainable livelihoods, and mental health support, fostering an environment where every individual has the agency to rebuild their lives.
+                    </p>
+<div class="grid grid-cols-1 gap-stack-md mt-stack-md">
+<div class="flex items-start gap-4 p-4 rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-brand-green text-3xl">diversity_3</span>
+<div>
+<h4 class="font-label-md text-label-md">Community Empowerment</h4>
+<p class="text-caption text-on-surface-variant">Putting decision-making power back into the hands of community leaders.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-4 rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-brand-green text-3xl">eco</span>
+<div>
+<h4 class="font-label-md text-label-md">Sustainable Development</h4>
+<p class="text-caption text-on-surface-variant">Creating long-term systems that thrive independently of external aid.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-4 rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-brand-green text-3xl">door_open</span>
+<div>
+<h4 class="font-label-md text-label-md">Inclusive Opportunities</h4>
+<p class="text-caption text-on-surface-variant">Ensuring access for youth, women, and marginalized groups.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Our Vision -->
+<section class="bg-surface-container-low py-24" style="background-image: linear-gradient(rgba(244, 243, 242, 0.9), rgba(244, 243, 242, 0.9)), url(&quot;https://lh3.googleusercontent.com/aida/AP1WRLudjC9SFImc1dxHbOvSDm6YoLlS84kGp4ghXHv-1oCD11i1vnQemwN35sfmYR6kjE8bc7PA-UYQX8QimeubpP7xwbqRK5LJguS_cobA4TdY1pzgzUnEN-Mb5HFV_XHUc5MeMUyzIUkC8Bmm-c_kWJSOQC_HDjt6YsyCYszKrz4f6gWjK_LUYxECgJ_si8vp4nDMSHg1Cf7PqNkE8WWZkP6fALLJ6fuyUKcw97EOzsVpHowwuoU2cpBMbz_3&quot;); background-size: cover; background-position: center center;">
+<div class="px-margin-desktop max-w-container-max mx-auto text-center mb-stack-lg">
+<h2 class="font-headline-md text-headline-md mb-stack-sm">Our Vision</h2>
+<p class="font-body-lg text-body-lg max-w-3xl mx-auto text-on-surface-variant">
+                    We envision thriving communities where refugees and host populations live with dignity, equality, and the opportunity to contribute to a shared future.
+                </p>
+</div>
+<div class="px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<div class="bg-white p-8 rounded-xl shadow-sm border border-outline-variant hover:shadow-md transition-shadow text-center">
+<span class="material-symbols-outlined text-brand-amber text-5xl mb-4">brightness_high</span>
+<h3 class="font-headline-sm text-headline-sm mb-2">Hope</h3>
+<p class="text-on-surface-variant">A foundational belief in a brighter, more secure future for all.</p>
+</div>
+<div class="bg-white p-8 rounded-xl shadow-sm border border-outline-variant hover:shadow-md transition-shadow text-center">
+<span class="material-symbols-outlined text-brand-amber text-5xl mb-4">fitness_center</span>
+<h3 class="font-headline-sm text-headline-sm mb-2">Resilience</h3>
+<p class="text-on-surface-variant">The strength to overcome adversity and grow through challenges.</p>
+</div>
+<div class="bg-white p-8 rounded-xl shadow-sm border border-outline-variant hover:shadow-md transition-shadow text-center">
+<span class="material-symbols-outlined text-brand-amber text-5xl mb-4">trending_up</span>
+<h3 class="font-headline-sm text-headline-sm mb-2">Opportunity</h3>
+<p class="text-on-surface-variant">Opening paths for economic and personal advancement.</p>
+</div>
+<div class="bg-white p-8 rounded-xl shadow-sm border border-outline-variant hover:shadow-md transition-shadow text-center">
+<span class="material-symbols-outlined text-brand-amber text-5xl mb-4">groups</span>
+<h3 class="font-headline-sm text-headline-sm mb-2">Leadership</h3>
+<p class="text-on-surface-variant">Nurturing the next generation of refugee and host-community leaders.</p>
+</div>
+</div>
+</section>
+<!-- Section 4: Core Values -->
+<section class="py-24 px-margin-desktop max-w-container-max mx-auto">
+<h2 class="font-headline-md text-headline-md text-center mb-16">Our Core Values</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Value 1 -->
+<div class="p-6 border-b-4 border-brand-teal bg-surface rounded-t-lg">
+<span class="material-symbols-outlined text-brand-teal mb-4">verified_user</span>
+<h4 class="font-headline-sm text-headline-sm mb-2">Integrity</h4>
+<p class="text-body-md text-on-surface-variant">Transparency and honesty in all our actions and partnerships.</p>
+</div>
+<!-- Value 2 -->
+<div class="p-6 border-b-4 border-brand-green bg-surface rounded-t-lg">
+<span class="material-symbols-outlined text-brand-green mb-4">join_inner</span>
+<h4 class="font-headline-sm text-headline-sm mb-2">Inclusion</h4>
+<p class="text-body-md text-on-surface-variant">Ensuring diverse voices are heard and valued equally.</p>
+</div>
+<!-- Value 3 -->
+<div class="p-6 border-b-4 border-brand-amber bg-surface rounded-t-lg">
+<span class="material-symbols-outlined text-brand-amber mb-4">assignment_turned_in</span>
+<h4 class="font-headline-sm text-headline-sm mb-2">Accountability</h4>
+<p class="text-body-md text-on-surface-variant">Remaining responsible to the communities we serve and donors.</p>
+</div>
+<!-- Value 4 -->
+<div class="p-6 border-b-4 border-brand-teal bg-surface rounded-t-lg">
+<span class="material-symbols-outlined text-brand-teal mb-4">handshake</span>
+<h4 class="font-headline-sm text-headline-sm mb-2">Collaboration</h4>
+<p class="text-body-md text-on-surface-variant">Partnering with global and local entities for collective impact.</p>
+</div>
+<!-- Value 5 -->
+<div class="p-6 border-b-4 border-brand-green bg-surface rounded-t-lg">
+<span class="material-symbols-outlined text-brand-green mb-4">lightbulb</span>
+<h4 class="font-headline-sm text-headline-sm mb-2">Innovation</h4>
+<p class="text-body-md text-on-surface-variant">Adopting fresh perspectives to solve age-old humanitarian issues.</p>
+</div>
+<!-- Value 6 -->
+<div class="p-6 border-b-4 border-brand-amber bg-surface rounded-t-lg">
+<span class="material-symbols-outlined text-brand-amber mb-4">favorite</span>
+<h4 class="font-headline-sm text-headline-sm mb-2">Compassion</h4>
+<p class="text-body-md text-on-surface-variant">Leading with empathy and human-centered design principles.</p>
+</div>
+<!-- Value 7 -->
+<div class="p-6 border-b-4 border-brand-teal bg-surface rounded-t-lg">
+<span class="material-symbols-outlined text-brand-teal mb-4">nature_people</span>
+<h4 class="font-headline-sm text-headline-sm mb-2">Sustainability</h4>
+<p class="text-body-md text-on-surface-variant">Designing for long-term ecological and social endurance.</p>
+</div>
+<!-- Value 8 -->
+<div class="p-6 border-b-4 border-brand-green bg-surface rounded-t-lg">
+<span class="material-symbols-outlined text-brand-green mb-4">volunteer_activism</span>
+<h4 class="font-headline-sm text-headline-sm mb-2">Respect</h4>
+<p class="text-body-md text-on-surface-variant">Upholding the inherent dignity of every human being.</p>
+</div>
+</div>
+</section>
+<!-- Section 5: Strategic Objectives -->
+<section class="py-24 bg-primary text-white overflow-hidden">
+<div class="px-margin-desktop max-w-container-max mx-auto relative">
+<h2 class="font-headline-md text-headline-md text-center mb-16">Strategic Objectives</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter relative">
+<!-- Connector line logic -->
+<div class="hidden lg:block absolute top-1/2 left-0 w-full h-px bg-white/20 -z-0"></div>
+<!-- Objective Cards-->
+<div class="bg-white/5 backdrop-blur-md p-6 rounded-xl border border-white/10 z-10 hover:bg-white/10 transition-all">
+<span class="material-symbols-outlined text-primary-fixed text-4xl mb-4">trending_up</span>
+<h4 class="font-label-md text-label-md mb-2">Improve Livelihoods</h4>
+<p class="text-caption opacity-80">Economic empowerment through vocational training.</p>
+</div>
+<div class="bg-white/5 backdrop-blur-md p-6 rounded-xl border border-white/10 z-10 hover:bg-white/10 transition-all">
+<span class="material-symbols-outlined text-primary-fixed text-4xl mb-4">school</span>
+<h4 class="font-label-md text-label-md mb-2">Expand Education</h4>
+<p class="text-caption opacity-80">Ensuring children and adults have access to learning.</p>
+</div>
+<div class="bg-white/5 backdrop-blur-md p-6 rounded-xl border border-white/10 z-10 hover:bg-white/10 transition-all">
+<span class="material-symbols-outlined text-primary-fixed text-4xl mb-4">psychology</span>
+<h4 class="font-label-md text-label-md mb-2">Support Mental Health</h4>
+<p class="text-caption opacity-80">Trauma-informed counseling and support systems.</p>
+</div>
+<div class="bg-white/5 backdrop-blur-md p-6 rounded-xl border border-white/10 z-10 hover:bg-white/10 transition-all">
+<span class="material-symbols-outlined text-primary-fixed text-4xl mb-4">forest</span>
+<h4 class="font-label-md text-label-md mb-2">Environmental Conservation</h4>
+<p class="text-caption opacity-80">Protecting natural resources in refugee-hosting areas.</p>
+</div>
+<div class="bg-white/5 backdrop-blur-md p-6 rounded-xl border border-white/10 z-10 hover:bg-white/10 transition-all">
+<span class="material-symbols-outlined text-primary-fixed text-4xl mb-4">storm</span>
+<h4 class="font-label-md text-label-md mb-2">Climate Resilience</h4>
+<p class="text-caption opacity-80">Building infrastructure to withstand climate shocks.</p>
+</div>
+<div class="bg-white/5 backdrop-blur-md p-6 rounded-xl border border-white/10 z-10 hover:bg-white/10 transition-all">
+<span class="material-symbols-outlined text-primary-fixed text-4xl mb-4">rebase_edit</span>
+<h4 class="font-label-md text-label-md mb-2">Promote Peace</h4>
+<p class="text-caption opacity-80">Conflict resolution and social cohesion programs.</p>
+</div>
+<div class="bg-white/5 backdrop-blur-md p-6 rounded-xl border border-white/10 z-10 hover:bg-white/10 transition-all">
+<span class="material-symbols-outlined text-primary-fixed text-4xl mb-4">woman</span>
+<h4 class="font-label-md text-label-md mb-2">Empower Women</h4>
+<p class="text-caption opacity-80">Specific programs for women-led households.</p>
+</div>
+<div class="bg-white/5 backdrop-blur-md p-6 rounded-xl border border-white/10 z-10 hover:bg-white/10 transition-all">
+<span class="material-symbols-outlined text-primary-fixed text-4xl mb-4">hub</span>
+<h4 class="font-label-md text-label-md mb-2">Strengthen Partnerships</h4>
+<p class="text-caption opacity-80">Aligning with UN and local government objectives.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 6: Our Approach -->
+<section class="py-24 px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="space-y-stack-md">
+<h2 class="font-headline-md text-headline-md text-brand-teal">Community-Led Development</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                        Our approach is built on the belief that refugees are not just recipients of aid, but active agents of change. We prioritize local ownership in every project.
+                    </p>
+<div class="grid grid-cols-2 gap-4">
+<div class="p-4 bg-brand-teal/5 rounded-lg border-l-4 border-brand-teal">
+<h5 class="font-label-md text-brand-teal">Community Ownership</h5>
+<p class="text-caption">Projects designed and managed by locals.</p>
+</div>
+<div class="p-4 bg-brand-green/5 rounded-lg border-l-4 border-brand-green">
+<h5 class="font-label-md text-brand-green">Local Leadership</h5>
+<p class="text-caption">Mentoring community elders and youth.</p>
+</div>
+<div class="p-4 bg-brand-amber/5 rounded-lg border-l-4 border-brand-amber">
+<h5 class="font-label-md text-brand-amber">Inclusive Participation</h5>
+<p class="text-caption">Every demographic has a seat at the table.</p>
+</div>
+<div class="p-4 bg-brand-teal/5 rounded-lg border-l-4 border-brand-teal">
+<h5 class="font-label-md text-brand-teal">Sustainable Solutions</h5>
+<p class="text-caption">Exit strategies built into every program.</p>
+</div>
+</div>
+</div>
+<div>
+<img class="w-full h-96 object-cover rounded-2xl shadow-xl" data-alt="A cinematic, warm-toned close-up of a diverse group of people sitting in a circle under a large acacia tree, engaged in deep conversation. The scene is illuminated by the soft golden hour sunlight of Kenya, creating a feeling of dignity, peace, and community collaboration. The photography style is professional and humanitarian, emphasizing connection and hope." src="https://lh3.googleusercontent.com/aida/AP1WRLv_cF6GIMD4icueWXHRgsBLdOJTgtHQvmMkl2H5BYQskZB0Wdxpm52V5w0Hl6y8Od9LcN0CuNEzQcBAXDBfXw8ICS0w2AbXNJacd6MYlKsUiZ8U5MXOjNvnCtvXBr7AyxEBaSyLfzvCS8L-XPmGdHswnFALi_4qMO3l0o6cuOUlfd9AbxFJMKceRshPAnuzqETA4I9CksxWUxcYJ1jHJhMjZFHHFYY-5a_CmScq3VPNNdScoBj6jpek5khC">
+</div>
+</div>
+</section>
+<!-- Section 7: Looking Ahead -->
+<section class="py-24 bg-gradient-to-br from-brand-teal to-primary text-white overflow-hidden relative">
+<div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_50%_120%,rgba(255,255,255,1),transparent)]"></div>
+<div class="px-margin-desktop max-w-container-max mx-auto text-center relative z-10">
+<h2 class="font-headline-md text-headline-md mb-16">The Road to 2030</h2>
+<div class="flex flex-col md:flex-row justify-between items-center gap-8 md:gap-4">
+<div class="flex-1 flex flex-col items-center">
+<div class="w-12 h-12 rounded-full bg-brand-amber flex items-center justify-center font-bold mb-4 shadow-lg ring-4 ring-white/20">1</div>
+<h5 class="font-label-md mb-2">Build Partnerships</h5>
+<div class="hidden md:block w-full h-0.5 bg-white/20 mt-4"></div>
+</div>
+<div class="flex-1 flex flex-col items-center">
+<div class="w-12 h-12 rounded-full bg-white text-primary flex items-center justify-center font-bold mb-4 shadow-lg">2</div>
+<h5 class="font-label-md mb-2">Launch Programmes</h5>
+<div class="hidden md:block w-full h-0.5 bg-white/20 mt-4"></div>
+</div>
+<div class="flex-1 flex flex-col items-center">
+<div class="w-12 h-12 rounded-full bg-white/30 backdrop-blur-md flex items-center justify-center font-bold mb-4 border border-white/50">3</div>
+<h5 class="font-label-md mb-2">Expand Reach</h5>
+<div class="hidden md:block w-full h-0.5 bg-white/20 mt-4"></div>
+</div>
+<div class="flex-1 flex flex-col items-center">
+<div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center font-bold mb-4 border border-white/50">4</div>
+<h5 class="font-label-md mb-2">Strengthen Leadership</h5>
+<div class="hidden md:block w-full h-0.5 bg-white/20 mt-4"></div>
+</div>
+<div class="flex-1 flex flex-col items-center">
+<div class="w-16 h-16 rounded-full bg-brand-green flex items-center justify-center font-bold mb-4 shadow-[0_0_20px_rgba(22,163,74,0.6)]">5</div>
+<h5 class="font-label-md mb-2">Sustainable Impact</h5>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 8: Join Our Mission -->
+<section class="relative py-32 overflow-hidden">
+<div class="absolute inset-0 -z-10">
+<img class="w-full h-full object-cover" data-alt="A wide-angle, breathtaking landscape of a community garden in a refugee settlement, with lush green saplings and people working together. The lighting is bright and optimistic, with a clear blue sky. The image conveys a powerful sense of growth, restoration, and collective action. The aesthetic is clean, professional, and full of life-giving energy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4fpRtg_0BhN1EuK9ltJHofc6gdGGKHQNtwayMaLmZZzu7k4M-txgwX2cmYqioRcwwi1Br3G62Ym6y8T9NNLgG_ELyJUvnQWL9AS4ASkCYyEGfT36BqQKaA4cJyOM_xQ1ojqLuqDifd98pC5O2D1z1iyu3uwFsNtg4WK4JkHCqxYRmNa_4WBSMYCerkVzP1404kEDcLZfAMPCZdYfHtJDfEl3-EoRhctRH7GobePT5tpdIdzpXBF95QzZ9S40Z94y6_OofZ9XLbxoi">
+<div class="absolute inset-0 bg-black/50 backdrop-blur-[2px]"></div>
+</div>
+<div class="px-margin-desktop max-w-container-max mx-auto text-center text-white">
+<h2 class="font-display-lg text-display-lg mb-stack-md">Join Our Mission</h2>
+<p class="font-body-lg text-body-lg max-w-2xl mx-auto mb-stack-lg opacity-90">
+                    Creating lasting change requires collective action. Whether you give your time, your voice, or your resources, you are an essential part of the journey.
+                </p>
+<div class="flex flex-wrap justify-center gap-stack-md">
+<button class="bg-brand-green text-white px-10 py-4 rounded-lg font-label-md hover:scale-105 transition-transform shadow-lg">Donate</button>
+<button class="bg-brand-amber text-white px-10 py-4 rounded-lg font-label-md hover:scale-105 transition-transform shadow-lg">Partner With Us</button>
+<button class="bg-white text-primary px-10 py-4 rounded-lg font-label-md hover:scale-105 transition-transform shadow-lg">Volunteer</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-stack-lg bg-surface-container-highest dark:bg-inverse-surface">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-stack-lg max-w-container-max mx-auto transition-colors duration-200">
+<div class="col-span-1 md:col-span-2">
+<div class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim font-bold mb-4">Springs of Hope</div>
+<p class="text-on-surface-variant font-body-md max-w-sm">© 2024 Springs of Hope. Refugee-led empowerment in Kenya. Building resilient futures through local leadership.</p>
+</div>
+<div class="flex flex-col gap-2">
+<h6 class="font-label-md text-on-surface font-bold mb-2">Organization</h6>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">About Us</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Our Programs</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Mental Health Support</a>
+</div>
+<div class="flex flex-col gap-2">
+<h6 class="font-label-md text-on-surface font-bold mb-2">Impact</h6>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Climate Initiatives</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Education Center</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Privacy Policy</a>
+</div>
+</div>
+</footer>
+
+</body></html>
