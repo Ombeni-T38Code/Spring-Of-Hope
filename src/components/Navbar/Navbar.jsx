@@ -10,22 +10,30 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const toggleMenu = () => setIsMenuOpen((prev) => !prev);
   const closeMenu = () => setIsMenuOpen(false);
 
-  // Toggle background state on scroll
+  // 1. Detect scroll position for transparent -> glassmorphism shift
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 20);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // 2. Lock body scroll when mobile menu is active
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isMenuOpen]);
 
   // Navigation Configuration
   const menuConfig = [
@@ -59,21 +67,20 @@ const Navbar = () => {
 
   return (
     <>
-      <nav
+      <header
         className={`${styles.navBar} ${
           isScrolled ? styles.scrolled : ""
         }`}
       >
-        {/* Logo */}
-        <Link to="/" className={styles.brandLink} onClick={closeMenu}>
-          <div className={styles.brandContainer}>
+        <div className={styles.navContainer}>
+          {/* Brand Logo */}
+          <Link to="/" className={styles.brandLink} onClick={closeMenu}>
             <div className={styles.logoRow}>
               <img
                 src={logoImage}
                 alt="Springs Hope logo"
                 className={styles.logoImage}
               />
-
               <div className={styles.logoTextGroup}>
                 <span className={styles.logoText}>Springs Hope</span>
                 <span className={styles.taglineText}>
@@ -81,81 +88,96 @@ const Navbar = () => {
                 </span>
               </div>
             </div>
+          </Link>
+
+          {/* Desktop Navigation Links */}
+          <nav className={styles.navLinks} aria-label="Desktop Navigation">
+            <Link
+              to="/"
+              className={`${styles.standaloneLink} ${
+                location.pathname === "/" ? styles.activeStandalone : ""
+              }`}
+            >
+              Home
+            </Link>
+
+            {menuConfig.map((item, index) => (
+              <NavDropdown
+                key={index}
+                title={item.title}
+                basePath={item.basePath}
+                links={item.links}
+              />
+            ))}
+
+            <Link
+              to="/where-we-work"
+              className={`${styles.standaloneLink} ${
+                location.pathname === "/where-we-work"
+                  ? styles.activeStandalone
+                  : ""
+              }`}
+            >
+              Where We Work
+            </Link>
+          </nav>
+
+          {/* Desktop Call To Action */}
+          <div className={styles.desktopActions}>
+            <Link to="/donate" className={styles.donateLinkBtn}>
+              <HeartHandshake size={18} className={styles.btnIcon} />
+              <span>Donate</span>
+            </Link>
           </div>
-        </Link>
 
-        {/* Desktop Navigation */}
-        <div className={styles.navLinks}>
-          <Link
-            to="/"
-            className={`${styles.standaloneLink} ${
-              location.pathname === "/" ? styles.activeStandalone : ""
-            }`}
+          {/* Mobile Menu Trigger Icon */}
+          <button
+            className={styles.mobileMenuTrigger}
+            onClick={toggleMenu}
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMenuOpen}
           >
-            Home
-          </Link>
-
-          {menuConfig.map((item, index) => (
-            <NavDropdown
-              key={index}
-              title={item.title}
-              basePath={item.basePath}
-              links={item.links}
-            />
-          ))}
-
-          <Link
-            to="/where-we-work"
-            className={`${styles.standaloneLink} ${
-              location.pathname === "/where-we-work"
-                ? styles.activeStandalone
-                : ""
-            }`}
-          >
-            Where We Work
-          </Link>
+            {isMenuOpen ? <X size={26} /> : <Menu size={26} />}
+          </button>
         </div>
+      </header>
 
-        {/* Donate Button */}
-        <div className={styles.desktopActions}>
-          <Link to="/donate" className={styles.donateLinkBtn}>
-            <HeartHandshake size={16} />
-            Donate
-          </Link>
-        </div>
-
-        {/* Mobile Menu Button */}
-        <button
-          className={styles.mobileMenuTrigger}
-          onClick={toggleMenu}
-          aria-label="Toggle Navigation"
-        >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </nav>
-
-      {/* Mobile Drawer */}
+      {/* Backdrop overlay behind drawer */}
       <div
+        className={`${styles.drawerOverlay} ${
+          isMenuOpen ? styles.overlayActive : ""
+        }`}
+        onClick={closeMenu}
+        aria-hidden="true"
+      />
+
+      {/* Mobile Drawer Navigation */}
+      <aside
         className={`${styles.mobileDrawer} ${
           isMenuOpen ? styles.drawerOpen : ""
         }`}
+        aria-label="Mobile Navigation"
       >
         <div className={styles.mobileLinksContainer}>
-          {/* Home */}
           <Link
             to="/"
-            className={styles.mobileParentLink}
+            className={`${styles.mobileParentLink} ${
+              location.pathname === "/" ? styles.mobileActive : ""
+            }`}
             onClick={closeMenu}
           >
             Home
           </Link>
 
-          {/* Dropdown Groups */}
           {menuConfig.map((item, index) => (
             <div key={index} className={styles.mobileGroupBlock}>
               <Link
                 to={item.basePath}
-                className={styles.mobileParentLink}
+                className={`${styles.mobileParentLink} ${
+                  location.pathname.startsWith(item.basePath)
+                    ? styles.mobileActive
+                    : ""
+                }`}
                 onClick={closeMenu}
               >
                 {item.title}
@@ -166,7 +188,11 @@ const Navbar = () => {
                   <Link
                     key={subIndex}
                     to={link.path}
-                    className={styles.mobileSubLink}
+                    className={`${styles.mobileSubLink} ${
+                      location.pathname === link.path
+                        ? styles.mobileSubActive
+                        : ""
+                    }`}
                     onClick={closeMenu}
                   >
                     {link.label}
@@ -176,26 +202,26 @@ const Navbar = () => {
             </div>
           ))}
 
-          {/* Where We Work */}
           <Link
             to="/where-we-work"
-            className={styles.mobileParentLink}
+            className={`${styles.mobileParentLink} ${
+              location.pathname === "/where-we-work" ? styles.mobileActive : ""
+            }`}
             onClick={closeMenu}
           >
             Where We Work
           </Link>
 
-          {/* Donate */}
           <Link
             to="/donate"
             className={styles.mobileDonateBtn}
             onClick={closeMenu}
           >
-            <HeartHandshake size={16} />
-            Donate
+            <HeartHandshake size={18} />
+            <span>Donate Now</span>
           </Link>
         </div>
-      </div>
+      </aside>
     </>
   );
 };

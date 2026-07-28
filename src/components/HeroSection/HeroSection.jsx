@@ -11,10 +11,6 @@ const HeroSection = () => {
       <div className={styles.contentWrapper}>
         <div className={styles.mainContent}>
 
-          <span className={styles.heroTag}>
-          Refugee-Led Organization &bull; Kakuma, Kenya
-          </span>
-
           <h1 className={styles.mainHeading}>
             Empowering Refugees and <br />
             <span className={styles.greenText}>
