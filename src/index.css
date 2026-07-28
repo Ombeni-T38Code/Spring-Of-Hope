@@ -18,16 +18,70 @@
   --color-emerald-700: #047857;
 }
 
-* {
-  box-sizing: border-box;
+/* index.css */
+
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: var(--font-sans);
-  background-color: #ffffff;
-  color: var(--color-slate-900);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+  background: #fff;
+  color: #333;
 }
+
+/* Root container */
+#root {
+  min-height: 100vh;
+}
+
+/* Main page content */
+main {
+  padding-top: 80px; /* Same height as the fixed navbar */
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Lists */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Buttons */
+button {
+  font: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Form elements */
+input,
+textarea,
+select {
+  font: inherit;
+  outline: none;
+}
+

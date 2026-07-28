@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
+import './index.css';
 import logoUrl from './assets/logos.png'
 
 // Set browser tab icon dynamically from src/assets/logos.png
