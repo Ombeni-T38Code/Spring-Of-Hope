@@ -13,8 +13,7 @@
   color: #ffffff;
   overflow: hidden;
   display: flex;
-  /* Aligns content wrapper to the bottom */
-  align-items: flex-end; 
+  align-items: flex-start; 
   justify-content: center;
 }
 
@@ -53,15 +52,23 @@
 .contentWrapper {
   position: relative;
   z-index: 10;
-  max-width: 1200px;
-  width: 100%;
+  
+  /* Reduced width on mobile */
+  width: 88%;
+  max-width: 26rem; 
   margin: 0 auto;
   
-  /* Extra bottom padding to keep content above screen edge */
-  padding-top: 3rem;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-  padding-bottom: clamp(2.5rem, 8vh, 5rem);
+  /* Fills mobile viewport height & centers content vertically */
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+  padding-top: clamp(2rem, 5vh, 3.5rem); 
+  padding-bottom: clamp(2rem, 5vh, 3.5rem);
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  box-sizing: border-box;
 
   opacity: 0;
   transform: translateY(20px);
@@ -70,9 +77,14 @@
 
 @media (min-width: 768px) {
   .contentWrapper {
+    max-width: 1200px;
+    width: 100%;
+    min-height: auto;
+    display: block;
+    padding-top: clamp(4rem, 10vh, 7rem);
     padding-left: 4rem;
     padding-right: 4rem;
-    padding-bottom: 5rem;
+    padding-bottom: 4rem;
   }
 }
 
@@ -81,8 +93,16 @@
 ========================= */
 
 .mainContent {
-  max-width: 44rem;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .mainContent {
+    max-width: 44rem;
+    display: block;
+  }
 }
 
 /* =========================
@@ -91,11 +111,11 @@
 
 .mainHeading {
   /* Fluid font scale for clear hierarchy on all devices */
-  font-size: clamp(1.75rem, 6vw, 2.25rem);
+  font-size: clamp(1.65rem, 5.5vw, 2.1rem);
   font-weight: 700;
   letter-spacing: -0.02em;
-  margin-bottom: 1rem;
-  line-height: 1.2;
+  margin-bottom: 0.85rem;
+  line-height: 1.25;
 
   opacity: 0;
   transform: translateY(15px);
@@ -107,6 +127,7 @@
   .mainHeading {
     font-size: 3rem;
     line-height: 1.15;
+    margin-bottom: 1rem;
   }
 }
 
@@ -132,6 +153,7 @@
   font-size: 0.95rem;
   color: #e5e7eb;
   line-height: 1.6;
+  margin-bottom: 0;
 }
 
 @media (min-width: 768px) {
@@ -143,8 +165,9 @@
 
 .blockquoteBlock {
   border-left: 3px solid #15803d;
-  padding-left: 1rem;
-  margin: 1.5rem 0;
+  padding-left: 0.85rem;
+  margin-top: 0.85rem;
+  margin-bottom: 0;
 }
 
 @media (min-width: 768px) {
@@ -161,8 +184,9 @@
 .buttonGroup {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-  margin-top: 1.75rem;
+  gap: 0.65rem;
+  margin-top: 1rem; /* Keeps buttons close to text */
+  padding-top: 0;
   width: 100%;
 
   opacity: 0;
