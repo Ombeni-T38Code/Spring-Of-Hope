@@ -43,7 +43,7 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div style={{ width: '100%', minHeight: '100vh', display: 'flex', flexDirection: 'column', backgroundColor: '#0f121d' }}>
+      <div style={{ width: '100%', minHeight: '100vh', display: 'flex', flexDirection: 'column', }}>
         <Navbar />
         
         <div style={{ flex: '1 0 auto' }}>
