@@ -1,0 +1,263 @@
+/* =========================
+   HERO BASE
+========================= */
+
+.heroSection {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh; 
+  background-color: #0f121d;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #ffffff;
+  overflow: hidden;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+/* =========================
+   BACKGROUND (FULL COVER)
+========================= */
+
+.heroBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../../assets/hero-bg.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  filter: brightness(0.35) contrast(1.1);
+  z-index: 0;
+
+  animation: bgSlowMove 25s ease-in-out infinite alternate;
+  transform: scale(1.05);
+  will-change: transform;
+}
+
+@keyframes bgSlowMove {
+  from {
+    transform: scale(1.05) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.1) translate3d(0, -15px, 0);
+  }
+}
+
+/* =========================
+   CONTENT WRAPPER
+========================= */
+
+.heroContainer {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  /* max-width: 1200px; */
+  margin: 0 auto;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+  /* Top padding ensures hero content sits nicely below your overlaying Navbar */
+  padding-top: clamp(6rem, 16vh, 10rem); 
+  padding-bottom: clamp(2rem, 5vh, 3.5rem);
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  box-sizing: border-box;
+
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.9s ease forwards;
+}
+
+@media (min-width: 768px) {
+  .heroContainer {
+    padding-top: clamp(8rem, 20vh, 12rem);
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.heroBody {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .heroBody {
+    max-width: 38rem;
+    display: block;
+  }
+}
+
+/* =========================
+   HEADING
+========================= */
+
+.heroTitle {
+  font-size: clamp(1.65rem, 5.5vw, 2.1rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.85rem;
+  line-height: 1.25;
+
+  opacity: 0;
+  transform: translateY(15px);
+  animation: fadeInUp 0.9s ease forwards;
+  animation-delay: 0.15s;
+}
+
+@media (min-width: 768px) {
+  .heroTitle {
+    font-size: 2.75rem;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+}
+
+.heroHighlight {
+  color: #15803d;
+  font-weight: 700;
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.heroDescription {
+  font-size: 0.95rem;
+  color: #e5e7eb;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  opacity: 0;
+  transform: translateY(15px);
+  animation: fadeInUp 0.9s ease forwards;
+  animation-delay: 0.3s;
+}
+
+@media (min-width: 768px) {
+  .heroDescription {
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.heroActions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-top: 1rem;
+  padding-top: 0;
+  width: 100%;
+
+  opacity: 0;
+  transform: translateY(15px);
+  animation: fadeInUp 0.9s ease forwards;
+  animation-delay: 0.45s;
+}
+
+@media (min-width: 480px) {
+  .heroActions {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+}
+
+.heroPrimaryButton,
+.heroSecondaryButton {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.6rem;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: all 0.25s ease;
+  font-size: 0.95rem;
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (min-width: 480px) {
+  .heroPrimaryButton,
+  .heroSecondaryButton {
+    width: auto;
+  }
+}
+
+.heroPrimaryButton {
+  background: #15803d;
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(21, 128, 61, 0.25);
+}
+
+.heroPrimaryButton:hover {
+  transform: translateY(-2px);
+  background: #166534;
+}
+
+.heroSecondaryButton {
+  background: transparent;
+  border: 1px solid #15803d;
+  color: #fff;
+}
+
+.heroSecondaryButton:hover {
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateY(-2px);
+}
+
+.heroButtonIcon {
+  transition: transform 0.25s ease;
+}
+
+.heroPrimaryButton:hover .heroButtonIcon {
+  transform: translateX(5px);
+}
+
+/* =========================
+   ANIMATION KEYFRAME
+========================= */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   ACCESSIBILITY
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

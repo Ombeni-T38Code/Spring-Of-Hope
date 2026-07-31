@@ -1,0 +1,150 @@
+.journeySection {
+  width: 100%;
+  padding: 4rem 1.5rem;
+  background-color: #f7f6f0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #334155;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* =========================================
+   HEADER SECTION (Left Aligned)
+========================================= */
+
+.headerBlock {
+  text-align: left;
+  max-width: 100%;
+  margin: 0 0 3rem 0;
+}
+
+.title {
+  font-size: 2.15rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.025em;
+  text-align: left;
+}
+
+.paragraphs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  max-width: 900px; /* Keeps line length readable across wide screens */
+}
+
+.paragraphs p {
+  font-size: 0.925rem;
+  line-height: 1.6;
+  color: #475569;
+  font-weight: 400;
+  margin: 0;
+  text-align: left;
+}
+
+/* =========================================
+   GRID CONTENT
+========================================= */
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+
+@media (min-width: 992px) {
+  .contentGrid {
+    grid-template-columns: 1.6fr 1fr; 
+    gap: 4.5rem;
+  }
+}
+
+.imageFrame {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 320px; /* Controlled, lower height */
+  background-color: #eae8e1;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: 0 8px 20px -5px rgba(0, 0, 0, 0.04);
+}
+
+@media (min-width: 992px) {
+  .imageFrame {
+    min-width: 550px;
+  }
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.milestoneList {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.milestoneItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+/* Circular Icon Badges */
+.iconBadge {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.badgeGreen {
+  background-color: #e2f1e8;
+  color: #2e7d32;
+}
+
+.badgeOrange {
+  background-color: #fdeee9;
+  color: #d97706;
+}
+
+.badgeBlue {
+  background-color: #e3effd;
+  color: #2563eb;
+}
+
+.milestoneContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.milestoneTitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 0.35rem 0;
+}
+
+.milestoneDesc {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #64748b;
+  font-weight: 400;
+  margin: 0;
+}
